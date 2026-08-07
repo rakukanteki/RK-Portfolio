@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khondokar Radwanur Rahman | Researcher &amp; Engineer</title>
+<meta name="description" content="Academic portfolio of Khondokar Radwanur Rahman — researcher in multimodal AI, physics-informed learning, and autonomous systems.">
+
+<script>
+  (() => {
+    const saved = localStorage.getItem('portfolio-theme');
+    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = saved || preferred;
+  })();
+</script>
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ AMBIENT BACKGROUND ============ -->
+<div class="depth-lines" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="siterail">
+  <div class="siterail__id">
+    <!-- <a class="siterail__brand" href="#top" aria-label="Back to introduction">
+      <span class="siterail__monogram" aria-hidden="true">KR</span>
+      <span class="siterail__brandtext">Khondokar Radwanur Rahman</span>
+    </a> -->
+  </div>
+  <nav class="siterail__nav" aria-label="Section navigation">
+    <a href="#education" data-navlink data-index="01" data-label="Education">Education</a>
+    <a href="#experience" data-navlink data-index="02" data-label="Experience">Experience</a>
+    <a href="#research" data-navlink data-index="03" data-label="Research">Research</a>
+    <a href="#writing" data-navlink data-index="04" data-label="Writing">Writing</a>
+    <a href="#media" data-navlink data-index="05" data-label="Media Outreach">Media</a>
+    <a href="#projects" data-navlink data-index="06" data-label="Projects">Projects</a>
+    <a href="#domain" data-navlink data-index="07" data-label="Technical Domain">Domain</a>
+    <a href="#recognitions" data-navlink data-index="08" data-label="Recognitions">Recognitions</a>
+    <a href="#contact" data-navlink data-index="09" data-label="Contact">Contact</a>
+    <a class="download-cv" href="assets/files/Radwan_CV.pdf" data-index="CV" data-label="Download CV" download>Download CV</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+    <span class="theme-toggle__sun" aria-hidden="true">☼</span>
+    <span class="theme-toggle__moon" aria-hidden="true">☾</span>
+  </button>
+  <button class="siterail__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <!-- ============ HERO / LOG HEAD ============ -->
+  <section class="hero" id="top">
+    <div class="hero__intro">
+      <div class="hero__copy">
+        <p class="eyebrow">Researcher · Engineer · Autonomous Systems</p>
+        <h1 class="hero__name">Khondokar<br>Radwanur Rahman</h1>
+        <p class="hero__role">I develop intelligent systems at the intersection of multimodal AI, physics-informed learning, and autonomous robotics.</p>
+        <p class="hero__affiliation">Graduate Research Assistant at Qatar University · B.Sc. in Electrical &amp; Computer Engineering, RUET</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#research">View publications</a>
+          <a class="button button--secondary" href="assets/files/Radwan_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <figure class="hero__portrait-wrap">
+        <img class="hero__portrait" src="assets/images/profile/Red01.jpeg" alt="Portrait of Khondokar Radwanur Rahman">
+      </figure>
+    </div>
+
+    <div class="hero__meta mono">
+      <a href="https://scholar.google.com/citations?user=89kgko4AAAAJ&amp;hl=en" data-placeholder="google-scholar">
+        <span class="hero__link-icon" aria-hidden="true">
+          <img src="assets/icons/scholar.png" alt="Google Scholar icon">
+        </span>
+        Google Scholar ↗
+      </a>
+      <a href="https://www.linkedin.com/in/khradwan" data-placeholder="linkedin">
+        <span class="hero__link-icon" aria-hidden="true">
+          <img src="assets/icons/linkedin.png" alt="LinkedIn icon">
+        </span>
+        LinkedIn ↗
+      </a>
+      <a href="mailto:radwankhondokar20@email.com">
+        <span class="hero__link-icon" aria-hidden="true">
+          <img src="assets/icons/gmail.png" alt="Email icon">
+        </span>
+        radwankhondokar20@email.com
+      </a>
+      <a href="https://www.kaggle.com/radwankhondokar" data-placeholder="Kaggle">
+        <span class="hero__link-icon" aria-hidden="true">
+          <img src="assets/icons/kaggle.png" alt="Kaggle icon">
+        </span>
+        Kaggle ↗
+      </a>
+      <a href="https://github.com/rakukanteki" data-placeholder="GitHub">
+        <span class="hero__link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.61-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.1 2.93.84.09-.66.35-1.1.64-1.35-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.67-.1-.26-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.02A9.57 9.57 0 0 1 12 6.8c.85.004 1.71.11 2.51.32 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.2 2.4.1 2.66.64.69 1.03 1.58 1.03 2.67 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85 0 1.33-.01 2.4-.01 2.72 0 .26.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10Z"/></svg>
+        </span>
+        GitHub ↗
+      </a>
+      <a href="https://orcid.org/0009-0006-5939-2450" data-placeholder="ORCiD" target="_blank" rel="noopener noreferrer">
+        <span class="hero__link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#A6CE39"/>
+          <path
+            fill="#FFFFFF"
+            d="M8.1 16.5H6.7V8.1h1.4v8.4ZM7.4 7.2a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Zm2.8.9h3.7c3.1 0 4.5 2.2 4.5 4.2 0 2.2-1.7 4.2-4.5 4.2h-3.7V8.1Zm1.4 7.2h2.2c2.7 0 3.2-2.1 3.2-3 0-1.4-.9-3-3.3-3h-2.1v6Z"
+          />
+        </svg>
+        </span>
+        ORCID ↗
+      </a>
+    </div>
+  </section>
+
+    <!-- ============ EDUCATION ============ -->
+  <section class="panel" id="education">
+    <header class="panel__head">
+      <h2 class="panel__title">Education</h2>
+      <span class="panel__rule" aria-hidden="true"></span>
+    </header>
+
+    <div class="edurow">
+      <div class="edurow__time mono">MAR 2022 — JUL 2026</div>
+      <div class="edurow__body">
+        <h3>B.Sc. in Electrical and Computer Engineering</h3>
+        <p class="mono">Rajshahi University of Engineering and Technology (RUET) · Rajshahi, Bangladesh</p>
+      </div>
+
+      <div class="edurow__time mono">APR 2018 — JUL 2020</div>
+      <div class="edurow__body">
+        <h3>Higher Secondary (General)</h3>
+        <p class="mono">Dhaka City College, Dhanmondi, Dhaka.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="panel" id="experience">
+    <header class="panel__head">
+      <h2 class="panel__title">Experience</h2>
+      <span class="panel__rule" aria-hidden="true"></span>
+    </header>
+
+    <ol class="explog">
+      <li class="explog__entry">
+        <div class="explog__time mono">FEB 2025 — PRESENT</div>
+        <div class="explog__body">
+          <h3>Graduate Research Assistant</h3>
+          <p class="explog__org mono">Qatar University</p>
+            <div align="justify"> <p>Working under <strong>Prof. Dr. Amith Abdullah Khandakar</strong> to develop multimodal AI pipelines integrating computer vision, time-series sensor, and operational data for industrial anomaly detection and energy forecasting, improving cross-modal prediction reliability by ~8%. Applied physics-informed neural networks (PINNs) and federated learning to 100k+ multimodal sensor samples, contributing to four QNRF-funded research projects and co-authoring four peer-reviewed book chapters.</p> </div>
+        </div>
+      </li>
+      <li class="explog__entry">
+        <div class="explog__time mono">MAY 2025 — JUL 2026</div>
+        <div class="explog__body">
+          <h3>Lead Software Engineer</h3>
+          <p class="explog__org mono">BengalSub</p>
+          <div align="justify"><p>Led software development for Autonomous Underwater Vehicles Hangor 1.0 and Hangor 2.0 for the international RoboSub competition held in California, USA. Deployed the autonomy stack on Jetson Orin Nano and Raspberry Pi 5, integrating YOLO detection, Depth Anything V2, and vision-based pose estimation. Built the mission-planning framework with Behavior Trees (PyTrees), optimized inference with TensorRT for a 68% latency reduction, and integrated Bar30 pressure sensing and VN-200 IMU for closed-loop depth stabilization.</p>
+        </div>
+        </div>
+      </li>
+      <li class="explog__entry">
+        <div class="explog__time mono">JAN 2026 — MAR 2026</div>
+        <div class="explog__body">
+          <h3>Software Team Mentor</h3>
+          <p class="explog__org mono">BengalBoat</p>
+          <div align="justify"><p>Mentored the <b>BengalBoat</b> team in developing the autonomous surface vessel <b>BijoyTori 1.0</b> for an international maritime robotics competition in Florida, USA. Guided the design of a ROS2 Jazzy–based autonomy stack on Raspberry Pi, integrating Intel RealSense D455 RGB-D perception, RPLidar A2 obstacle detection, and EKF-based sensor fusion for robust localization. Oversaw the implementation of autonomous navigation using global and local planners with dynamic costmaps, and supervised system validation in Gazebo Classic before real-world deployment.</p></div>
+        </div>
+      </li>
+      <li class="explog__entry">
+        <div class="explog__time mono">SEP 2025 — FEB 2026</div>
+        <div class="explog__body">
+          <h3>AI Trainer</h3>
+          <p class="explog__org mono">Outlier AI</p>
+          <div align="justify"><p>Worked as an <b>AI Trainer</b> at <b>Outlier AI</b>, contributing to the <b>Kepler RLHF</b> and <b>Green Wizard</b> projects. Evaluated and improved large language models through Reinforcement Learning from Human Feedback (RLHF), prompt engineering, response ranking, and factuality assessment. Produced high-quality human annotations across complex reasoning and coding tasks, helping enhance model alignment, instruction following, and overall response quality while adhering to rigorous quality and safety standards.</p></div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+    <!-- ============ TECHNICAL DOMAIN ============ -->
+  <section class="panel domain" id="domain">
+    <header class="panel__head">
+      <h2 class="panel__title">Domain</h2>
+      <span class="panel__rule" aria-hidden="true"></span>
+    </header>
+    <!-- <p class="domain__intro">A multidisciplinary technical practice spanning intelligent software, applied machine learning, and autonomous robotic systems. Explore each domain to view the associated tools and capabilities.</p> -->
+
+    <div class="domain__explorer">
+      <div class="domain__nodes" role="tablist" aria-label="Technical domains">
+        <button class="domain-node is-active" type="button" role="tab" aria-selected="true" aria-controls="domain-development" id="tab-development" data-domain="development">
+          <span class="domain-node__index">01</span><span>Development</span>
+        </button>
+        <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-aiml" id="tab-aiml" data-domain="aiml">
+          <span class="domain-node__index">02</span><span>AI / ML</span>
+        </button>
+        <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-robotics" id="tab-robotics" data-domain="robotics">
+          <span class="domain-node__index">03</span><span>Robotics</span>
+        </button>
+        <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-languages" id="tab-languages" data-domain="languages">
+          <span class="domain-node__index">04</span><span>Languages</span>
+        </button>
+      </div>
+
+      <div class="domain__details" aria-live="polite">
+        <article class="domain-panel is-active" id="domain-development" role="tabpanel" aria-labelledby="tab-development" data-domain-panel="development">
+          <p class="domain-panel__label">Software engineering &amp; infrastructure</p>
+          <h3>Development</h3>
+          <div class="domain-skillgroup"><strong>Web Technologies</strong><div class="skilltags"><span>FastAPI</span><span>Flask</span><span>Django</span><span>React</span><span>React Native</span></div></div>
+          <div class="domain-skillgroup"><strong>MLOps &amp; Infrastructure</strong><div class="skilltags"><span>AWS</span><span>Docker</span><span>DVC</span><span>MLflow</span><span>Git</span></div></div>
+        </article>
+        <article class="domain-panel" id="domain-aiml" role="tabpanel" aria-labelledby="tab-aiml" data-domain-panel="aiml" hidden>
+          <p class="domain-panel__label">Learning systems &amp; perception</p>
+          <h3>AI / Machine Learning</h3>
+          <div class="domain-skillgroup"><strong>Machine Learning</strong><div class="skilltags"><span>PyTorch</span><span>TensorFlow</span><span>Scikit-Learn</span><span>OpenCV</span><span>YOLO</span></div></div>
+          <div class="domain-skillgroup"><strong>Sensors &amp; Perception</strong><div class="skilltags"><span>LiDAR</span><span>RGB-D Cameras</span><span>Kalman Filters</span><span>PointCloud Processing</span></div></div>
+        </article>
+        <article class="domain-panel" id="domain-robotics" role="tabpanel" aria-labelledby="tab-robotics" data-domain-panel="robotics" hidden>
+          <p class="domain-panel__label">Robotics &amp; autonomous systems</p>
+          <h3>Robotics</h3>
+          <div class="domain-skillgroup"><strong>Robotics &amp; Autonomy</strong><div class="skilltags"><span>ROS2</span><span>MAVLink</span><span>Pixhawk</span><span>Behavior Trees</span><span>Gazebo</span></div></div>
+          <div class="domain-skillgroup"><strong>Sensors &amp; Perception</strong><div class="skilltags"><span>LiDAR</span><span>RGB-D Cameras</span><span>Kalman Filters</span><span>PointCloud Processing</span></div></div>
+        </article>
+        <article class="domain-panel" id="domain-languages" role="tabpanel" aria-labelledby="tab-languages" data-domain-panel="languages" hidden>
+          <p class="domain-panel__label">Programming foundations</p>
+          <h3>Languages</h3>
+          <div class="domain-skillgroup"><strong>Programming Languages</strong><div class="skilltags"><span>Python</span><span>C / C++</span><span>SQL</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH & PUBLICATIONS ============ -->
+  <section class="panel" id="research">
+    <header class="panel__head">
+      <h2 class="panel__title">Research &amp; Publications</h2>
+      <span class="panel__rule" aria-hidden="true"></span>
+    </header>
+
+    <div class="pubslider" data-pub-slider>
+      <div class="pubslider__controls" aria-label="Research publications navigation">
+        <button class="pubslider__button pubslider__button--prev" type="button" aria-label="Scroll publications left">←</button>
+        <button class="pubslider__button pubslider__button--next" type="button" aria-label="Scroll publications right">→</button>
+      </div>
+
+      <div class="pubslider__track">
+        <article class="pubcard">
+          <div class="pubcard__frame">
+            <div class="pubcard__figure">
+              <img src="assets/images/research/MTPINN.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
+            </div>
+          </div>
+          <div class="pubcard__body">
+            <p class="pubcard__journal mono">IEEE Transactions on Instrumentation and Measurement · Q1 · 2026</p>
+            <div class="pubcard__content">
+              <h3>Physics-Guided Multiphase Flow Metering and Regime Identification Using Multi-Task PINNs with Condition-Aware Visualization</h3>
+              <a class="pubcard__doi mono" href="#" data-placeholder="doi-multiphase">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pubcard">
+          <div class="pubcard__frame">
+            <div class="pubcard__figure">
+              <img src="assets/images/research/reliefnet.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
+            </div>
+          </div>
+          <div class="pubcard__body">
+            <p class="pubcard__journal mono">Progress in Disaster Science · Q1 · 2026</p>
+            <div class="pubcard__content">
+              <h3>ReliefNet: A Knowledge-Driven, Explainable AI Multimodal Framework for Disaster Severity Classification and Humanitarian Decision-Making</h3>
+              <a class="pubcard__doi mono" href="https://doi.org/10.1016/j.pdisas.2026.100528" data-placeholder="doi-reliefnet">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pubcard">
+          <div class="pubcard__frame">
+            <div class="pubcard__figure">
+              <img src="assets/images/research/Multiphase.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
+            </div>
+          </div>
+          <div class="pubcard__body">
+            <p class="pubcard__journal mono">Process Safety and Environmental Protection · Q1 · 2026</p>
+            <div class="pubcard__content">
+              <h3>Multiphase System Leak Detection, Localization, and Dimension Estimation Using Multi-Head Physics-Informed Neural Network</h3>
+              <a class="pubcard__doi mono" href="https://doi.org/10.1016/j.psep.2026.108532" data-placeholder="doi-multiphase">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pubcard">
+          <div class="pubcard__frame">
+            <div class="pubcard__figure">
+              <img src="assets/images/research/RoadSense.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
+            </div>
+          </div>
+          <div class="pubcard__body">
+            <p class="pubcard__journal mono">Scientific Data · Q1 · 2026</p>
+            <div class="pubcard__content">
+              <h3>RoadSens-4M: A Multimodal Smartphone &amp; Camera Dataset for Holistic Road-way Analysis</h3>
+              <a class="pubcard__doi mono" href="https://www.nature.com/articles/s41597-026-07072-y">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pubcard">
+          <div class="pubcard__frame">
+            <div class="pubcard__figure">
+              <img src="assets/images/research/Autonoums_Wheel_Chair.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
+            </div>
+          </div>
+          <div class="pubcard__body">
+            <p class="pubcard__journal mono">28th Int'l Conf. on Computer &amp; Information Technology · 2025</p>
+            <div class="pubcard__content">
+              <h3>ROS2-Based Autonomous Wheelchair with Adaptive Navigation and LLM-Driven Conversational Control</h3>
+              <a class="pubcard__doi mono" href="https://ieeexplore.ieee.org/document/11490350">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="panel" id="projects">
+    <header class="panel__head">
+      <h2 class="panel__title">Featured Projects</h2>
+      <span class="panel__rule" aria-hidden="true"></span>
+    </header>
+
+    <div class="projgrid">
+      <article class="projcard" data-placeholder="project-hangor">
+        <div class="projcard__figure">
+          <img src="assets/images/projects/hangorv1.png" alt="Hangor1 AUV project" data-placeholder="project-hangor-img">
+        </div>
+        <div class="projcard__content">
+          <h3>Hangor1.0 AUV</h3>
+          <p class="projcard__desc">Hangor integrates YOLOv8 perception, acoustic localization, ROS-based autonomy, and Behavior Tree mission planning on Jetson Orin Nano for robust autonomous underwater operations.</p>
+          <a class="projcard__github mono" href="https://github.com/rakukanteki/RoboSub25.git" data-placeholder="project-hangor-github">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="projcard" data-placeholder="project-hangor2">
+        <div class="projcard__figure">
+          <img src="assets/images/projects/hangorv2.jpeg" alt="Hangor2 AUV project" data-placeholder="project-hangor-img">
+        </div>
+        <div class="projcard__content">
+          <h3>Hangor2.0 AUV</h3>
+          <p class="projcard__desc">Architecting an embedded AI autonomy stack with YOLOv11, Depth Anything V2, Behavior Trees, TensorRT, and sensor fusion for real-time underwater navigation in Jetson Orin Nano.</p>
+          <a class="projcard__github mono" href="https://github.com/Nezent/BengalSub.git" data-placeholder="project-hangor-github">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="projcard" data-placeholder="project-bijoytori">
+        <div class="projcard__figure">
+          <img src="assets/images/projects/bijoytoriv1.jpg" alt="BijoyTori 1.0 project" data-placeholder="project-bijoytori-img">
+        </div>
+        <div class="projcard__content">
+          <h3>BijoyTori1.0 ASV</h3>
+          <p class="projcard__desc">Architected a ROS2 Jazzy autonomy pipeline on Raspberry Pi, integrating RGB-D perception, LiDAR obstacle detection, EKF sensor fusion, and autonomous navigation, validated in Gazebo before hardware deployment.</p>
+          <a class="projcard__github mono" href="https://github.com/Nezent/bijoy_tori.git" data-placeholder="project-bijoytori-github">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="projcard" data-placeholder="project-tracer">
+        <div class="projcard__figure">
+          <img src="assets/images/projects/tracer.png" alt="Tracer project — replace with real project image" data-placeholder="project-tracer-img">
+        </div>
+        <div class="projcard__content">
+          <h3>Tracer</h3>
+          <p class="projcard__desc">Built and deployed an MTPINN at HBKU, Qatar, combining physics-informed learning and multimodal digital twin validation for real-time flow regime classification and velocity estimation, achieving 96.12% ± 2.3% accuracy.</p>
+          <a class="projcard__github mono" href="https://github.com/rakukanteki/Multiphase-Flow-Regime-Code.git" data-placeholder="project-tracer-github">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="projcard" data-placeholder="project-agrovision">
+        <div class="projcard__figure">
+          <img src="assets/images/projects/agrovision.png" alt="AgroVision project" data-placeholder="project-agrovision-img">
+        </div>
+        <div class="projcard__content">
+          <h3>AgroVision</h3>
+          <p class="projcard__desc">Developed an end-to-end deep learning application for plant disease classification using TensorFlow, Python, and Flask, with Docker, AWS, DagsHub (MLOps), GitHub Actions, and HTML/CSS for automated deployment and web-based inference.</p>
+          <a class="projcard__github mono" href="https://github.com/rakukanteki/Plant-Disease-Classification-using-MLflow-and-DVC.git" data-placeholder="project-agrovision-github">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="projcard" data-placeholder="project-chatbot">
+        <div class="projcard__figure">
+          <img src="assets/images/projects/chatbot.png" alt="Chatbot project" data-placeholder="project-agrovision-img">
+        </div>
+        <div class="projcard__content">
+          <h3>Medic</h3>
+          <p class="projcard__desc">Medical Assistant Chatbot using a full-stack RAG (Retrieval-Augmented Generation) pipeline! This project combines powerful tools like LangChain, Pinecone, Google Embeddings, and Groq’s LLaMA 3 to create an intelligent, domain-specific chatbot that answers medical queries using real PDF documents.</p>
+          <a class="projcard__github mono" href="https://github.com/rakukanteki/Medical-AI-Assistant.git" data-placeholder="project-assistant-github">GitHub ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED WRITING ============ -->
+  <section class="panel" id="writing">
+    <header class="panel__head">
+      <h2 class="panel__title">Featured Writing</h2>
+      <span class="panel__rule" aria-hidden="true"></span>
+    </header>
+
+    <ul class="writelist">
+      <li class="writelist__row">
+        <span class="writelist__title">Confusing LLMs with Adversarial Inputs</span>
+        <a href="https://medium.com/@optimisticfellow3652/confusing-llms-with-adversarial-inputs-4a2269f5e20b?sharedUserId=optimisticfellow3652" class="writelist__link mono" data-placeholder="writing-1">Read ↗</a>
+      </li>
+      <li class="writelist__row">
+        <span class="writelist__title">An Overview of BengalSub Autonomous System</span>
+        <a href="https://medium.com/@optimisticfellow3652/bengalsub-autonomous-system-c316e19dd994?sharedUserId=optimisticfellow3652" class="writelist__link mono" data-placeholder="writing-2">Read ↗</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ MEDIA OUTREACH ============ -->
+  <section class="panel media" id="media">
+    <header class="panel__head">
+      <h2 class="panel__title">Media Outreach</h2>
+      <span class="panel__rule" aria-hidden="true"></span>
+    </header>
+    <p class="media__intro">Selected media coverage, public engagement, and stories highlighting research, engineering, and international competition work.</p>
+
+    <div class="media__track" aria-label="Media coverage stories">
+      <article class="media-card" data-placeholder="media-featured">
+        <img src="assets/images/media/somoyTV.jpg" alt="Somoy TV coverage of BengalSub at RoboSub 2026" class="media-card__visual">
+        <div class="media-card__content">
+          <div class="media-card__meta"><span>Somoy TV</span><time datetime="2026-06-26">Month 2026</time></div>
+          <h3>বিশ্বমঞ্চে রোবোসাব প্রতিযোগিতায় সেমিফাইনালে বাংলাদেশের ‘বেঙ্গলসাব’</h3>
+          <p>আন্তর্জাতিক অঙ্গনে আন্ডারওয়াটার রোবোটিক্সের অন্যতম মর্যাদাপূর্ণ প্রতিযোগিতা ‘রোবোসাব ২০২৬’-এ এক অবিস্মরণীয় ইতিহাস সৃষ্টি করেছে বাংলাদেশের তরুণ প্রকৌশলীদের দল ‘বেঙ্গলসাব’। প্রথম কোনো মাল্টিডিসিপ্লিনারি দল হিসেবে ২০২৫ সালে বিশ্বমঞ্চে ডেবিউ করার পর এবার আরও এক ধাপ এগিয়ে প্রথম বাংলাদেশি দল হিসেবে সরাসরি সেমি ফাইনালে ওঠার গৌরব অর্জন করে।</p>
+          <a href="https://www.somoynews.tv/news/2026-06-26/EwvstTZL?fbclid=IwY2xjawTjMOxwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMTduSldFbnZsOVBINUU3SWdzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEezAxTb7lYinqa65oU3sTNhXmyM4Xzb-fkstyd5H6UAXxN1np7roCUgf5lVqQ_aem_cbeNlMkdyA90KYr3g-Lwjw" class="media-card__link" data-placeholder="media-link-featured">Read coverage <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="media-card" data-placeholder="media-item-2">
+        <img src="assets/images/media/MarsRover.jpg" alt="Media coverage of RUET Exover at the Mars Autonomous Rover Challenge" class="media-card__visual">
+        <div class="media-card__content">
+          <div class="media-card__meta"><span>News Outlet</span><time datetime="2025-12">2025</time></div>
+          <h3>বিশ্বমঞ্চে রুয়েটের দুর্দান্ত সাফল্য: মার্স অটোনোমাস রোভার চ্যালেঞ্জে RUET Exover গ্লোবাল টপ–৬</h3>
+          <p>'মার্স অটোনোমাস রোভার র‍্যালি ডিজাইন চ্যালেঞ্জ ২০২৫' এ আন্তর্জাতিক অঙ্গনে দারুণ সাফল্য অর্জন করেছে রাজশাহী প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়ের (রুয়েট) রোবোটিক্স টিম “RUET Exover”। বিশ্বব্যাপী স্বনামধন্য বিশ্ববিদ্যালয়গুলোর অংশগ্রহণে আয়োজিত এই প্রতিযোগিতায় টিমটি ৬ষ্ঠ স্থান অর্জন করে দেশের জন্য গৌরব বয়ে এনেছে। প্রতিযোগিতাটি আয়োজন করে যুক্তরাষ্ট্রের NASA Texas Space Grant Consortium এবং Texas A&M University Aerospace Engineering Department, যেখানে প্রতিযোগীদের মঙ্গলগ্রহের Kaiser Crater এর প্রতিকূল ভূপ্রকৃতিতে সম্পূর্ণ স্বয়ংক্রিয় নেভিগেশন সক্ষম রোভার অ্যালগরিদম ডিজাইন করার চ্যালেঞ্জ দেওয়া হয়।</p>
+          <a href="https://www.facebook.com/photo.php?fbid=122180746814479647&set=pb.61564389426919.-2207520000&type=3" class="media-card__link" data-placeholder="media-link-2">Read coverage <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="media-card" data-placeholder="media-item-3">
+        <img src="assets/images/media/robosub25.jpg" alt="Media coverage of RUET students at RoboSub 2025" class="media-card__visual">
+        <div class="media-card__content">
+          <div class="media-card__meta"><span>News Outlet</span><time datetime="2025-09">2025</time></div>
+          <h3>যুক্তরাষ্ট্রে বিশ্বসেরা রোবোটিক্স আসরে রুয়েটের দুই শিক্ষার্থী</h3>
+          <p>যুক্তরাষ্ট্রে বিশ্বসেরা রোবোটিক্স আসরে রুয়েটের দুই শিক্ষার্থী যুক্তরাষ্ট্রের ক্যালিফোর্নিয়ার আর্ভিনে অনুষ্ঠিত বিশ্বখ্যাত অটোনোমাস আন্ডারওয়াটার ভেহিকল (AUV) প্রতিযোগিতা “RoboSub 2025”-এ প্রথমবারের মতো অংশ নিয়েছেন রাজশাহী প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়ের (রুয়েট) দুই শিক্ষার্থী। আন্তর্জাতিক অঙ্গনে রুয়েটের এই অংশগ্রহণকে বাংলাদেশের রোবোটিক্স গবেষণা ও উদ্ভাবনের ক্ষেত্রে এক নতুন দিগন্ত হিসেবে দেখা হচ্ছে।</p>
+          <a href="https://www.facebook.com/photo.php?fbid=122180746814479647&set=pb.61564389426919.-2207520000&type=3" class="media-card__link" data-placeholder="media-link-2">Read coverage <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ RECOGNITIONS ============ -->
+  <section class="panel" id="recognitions">
+    <div class="recognitions-layout">
+      <div class="recognitions-main">
+    <header class="panel__head">
+      <h2 class="panel__title">Recognitions</h2>
+      <span class="panel__rule" aria-hidden="true"></span>
+    </header>
+
+    <ul class="reclist">
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>RoboSub 2026, California, USA</h3>
+        <span class="reclist__year">2026</span>
+      </div>
+      <p>Semifinalist and ranked 18th out of 60 teams in the Design Documentation category.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>RoboBoat 2026, Florida, USA</h3>
+        <span class="reclist__year">2026</span>
+      </div>
+      <p>Represented Bangladesh at the international RoboBoat competition.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>Mars Autonomous Rover Rally, Texas, USA</h3>
+        <span class="reclist__year">2026</span>
+      </div>
+      <p>Led Team RUET Exover and achieved 6th place globally, and won $500 in the NASA Texas Space Grant competition.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>RoboSub 2025, California, USA</h3>
+        <span class="reclist__year">2025</span>
+      </div>
+      <p>Represented Bangladesh at the international RoboSub competition.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>Global AI Hackathon (Kaggle)</h3>
+        <span class="reclist__year">2025</span>
+      </div>
+      <p>Ranked 15th out of 355 teams worldwide.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>Synthetic-to-Real Object Detection Challenge (Kaggle)</h3>
+        <span class="reclist__year">2025</span>
+      </div>
+      <p>Ranked 12th out of 103 teams globally.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>5th International KIBO-RPC</h3>
+        <span class="reclist__year">2025</span>
+      </div>
+      <p>Ranked 7th out of 135 teams in the national round.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>National Hackathon, East West University</h3>
+        <span class="reclist__year">2025</span>
+      </div>
+      <p>Finalist.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>University Innovation Hub Program-Cohort 1</h3>
+        <span class="reclist__year">2025</span>
+      </div>
+      <p>Our team MostQuitt secured 2nd place and received a pre-seed fund of BDT 60,000.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>RUET Technical Scholarship</h3>
+        <span class="reclist__year">2022–2024</span>
+      </div>
+      <p>Awarded the Technical Scholarship for three consecutive years (2022, 2023, and 2024).</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+        <h3>University Physics Olympiad</h3>
+        <span class="reclist__year">2023</span>
+      </div>
+      <p>Recognized as an Accomplished Competitor.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+      <h3>Smart Rajshahi Innovation Challenge</h3>
+        <span class="reclist__year">2023</span>
+      </div>
+      <p>Our team Best_Trio secured 3rd place among 100+ teams nationwide.</p>
+    </li>
+  </ul>
+      </div>
+
+      <aside class="profiles" id="profiles" aria-labelledby="profiles-title">
+        <header class="profiles__head">
+          <h2 class="panel__title" id="profiles-title">Profiles</h2>
+          <span class="panel__rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="profilelist">
+          <a class="profilecard" href="https://codeforces.com/profile/radwan1210" data-placeholder="profile-codeforces">
+            <span class="profilecard__logo profilecard__logo--codeforces" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+            <span class="profilecard__body">
+              <strong>Codeforces</strong>
+              <span class="profilecard__stat"><b data-placeholder-stat>—</b> Max rating: 1216 (Pupil)</span>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="profilecard" href="https://leetcode.com/u/radwan121/" data-placeholder="profile-leetcode">
+            <span class="profilecard__logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.1 3.2 7.4 9.9a5.1 5.1 0 0 0 0 7.2 5.1 5.1 0 0 0 7.2 0l2-2-2.2-2.2-2 2a2 2 0 0 1-2.8 0 2 2 0 0 1 0-2.8l6.7-6.7-2.2-2.2Z"/><path d="M10.2 10.8h9.1v3.1h-9.1z"/></svg>
+            </span>
+            <span class="profilecard__body">
+              <strong>LeetCode</strong>
+              <span class="profilecard__stat"><b data-placeholder-stat>—</b> Problems solved: 200+</span>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="profilecard" href="https://www.kaggle.com/radwankhondokar" data-placeholder="profile-kaggle">
+            <span class="profilecard__logo" aria-hidden="true">
+              <img src="assets/icons/kaggle.png" alt="Kaggle logo">
+            </span>
+            <span class="profilecard__body">
+              <strong>Kaggle</strong>
+              <span class="profilecard__stat"><b>14</b> competitions · <b>6</b> datasets</span>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="profilecard" href="https://scholar.google.com/citations?user=89kgko4AAAAJ&hl=en" data-placeholder="profile-google-scholar">
+            <span class="profilecard__logo" aria-hidden="true">
+              <img src="assets/icons/scholar.png" alt="Google Scholar logo">
+            </span>
+            <span class="profilecard__body">
+              <strong>Google Scholar</strong>
+              <span class="profilecard__stat"><b>4</b> citations · h-index <b>2</b> · i10-index <b>0</b></span>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="sitefoot" id="contact">
+  <div class="sitefoot__inner">
+    <div class="sitefoot__intro">
+      <p class="sitefoot__eyebrow">Contact</p>
+      <h2>Let’s discuss research,<br>engineering, or collaboration.</h2>
+      <p>I welcome conversations about multimodal AI, physics-informed learning, autonomous systems, and interdisciplinary research opportunities.</p>
+    </div>
+    <div class="sitefoot__links">
+      <a href="mailto:radwankhondokar20@email.com"><span>Email</span><strong>radwankhondokar20@email.com</strong><b aria-hidden="true">↗</b></a>
+      <a href="https://www.linkedin.com/in/khradwan"><span>LinkedIn</span><strong>linkedin.com/in/khradwan</strong><b aria-hidden="true">↗</b></a>
+      <a href="https://scholar.google.com/citations?user=89kgko4AAAAJ&amp;hl=en"><span>Google Scholar</span><strong>Research profile</strong><b aria-hidden="true">↗</b></a>
+    </div>
+  </div>
+  <div class="sitefoot__base">
+    <span>© <span id="year"></span> Khondokar Radwanur Rahman</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<button class="backtotop" id="backToTop" aria-label="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
