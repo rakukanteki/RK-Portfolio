@@ -39,7 +39,6 @@
     <a href="#domain" data-navlink data-index="07" data-label="Technical Domain">Domain</a>
     <a href="#recognitions" data-navlink data-index="08" data-label="Recognitions">Recognitions</a>
     <a href="#contact" data-navlink data-index="09" data-label="Contact">Contact</a>
-    <a class="download-cv" href="assets/files/Radwan_CV.pdf" data-index="CV" data-label="Download CV" download>Download CV</a>
   </nav>
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
     <span class="theme-toggle__sun" aria-hidden="true">☼</span>
@@ -56,12 +55,10 @@
   <section class="hero" id="top">
     <div class="hero__intro">
       <div class="hero__copy">
-        <p class="eyebrow">Researcher · Engineer · Autonomous Systems</p>
+        <p class="eyebrow">Researcher · Engineer</p>
         <h1 class="hero__name">Khondokar<br>Radwanur Rahman</h1>
-        <p class="hero__role">I develop intelligent systems at the intersection of multimodal AI, physics-informed learning, and autonomous robotics.</p>
-        <p class="hero__affiliation">Graduate Research Assistant at Qatar University · B.Sc. in Electrical &amp; Computer Engineering, RUET</p>
+        <div align="justify"> <p class="hero__role">My interests lie at the intersection of AI, physics-informed learning, mathematical modeling, privacy, and autonomous robotics.</p></div>
         <div class="hero__actions">
-          <a class="button button--primary" href="#research">View publications</a>
           <a class="button button--secondary" href="assets/files/Radwan_CV.pdf" download>Download CV</a>
         </div>
       </div>
@@ -116,6 +113,103 @@
     </div>
   </section>
 
+  <!-- ============ Profile + Domain ==============-->
+  <section class="panel profile-domain">
+    <div class="profile-domain__layout">
+      <aside class="profiles" id="profiles" aria-labelledby="profiles-title">
+        <header class="profiles__head">
+          <h2 class="panel__title" id="profiles-title">Profiles</h2>
+          <span class="panel__rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="profilelist">
+          <a class="profilecard" href="https://codeforces.com/profile/radwan1210" data-placeholder="profile-codeforces">
+            <span class="profilecard__logo profilecard__logo--codeforces" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+            <span class="profilecard__body">
+              <strong>Codeforces</strong>
+              <span class="profilecard__stat"><b data-placeholder-stat>—</b> Max rating: 1216 (Pupil)</span>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="profilecard" href="https://leetcode.com/u/radwan121/" data-placeholder="profile-leetcode">
+            <span class="profilecard__logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.1 3.2 7.4 9.9a5.1 5.1 0 0 0 0 7.2 5.1 5.1 0 0 0 7.2 0l2-2-2.2-2.2-2 2a2 2 0 0 1-2.8 0 2 2 0 0 1 0-2.8l6.7-6.7-2.2-2.2Z"/><path d="M10.2 10.8h9.1v3.1h-9.1z"/></svg>
+            </span>
+            <span class="profilecard__body">
+              <strong>LeetCode</strong>
+              <span class="profilecard__stat"><b data-placeholder-stat>—</b> Problems solved: 200+</span>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="profilecard" href="https://www.kaggle.com/radwankhondokar" data-placeholder="profile-kaggle">
+            <span class="profilecard__logo" aria-hidden="true">
+              <img src="assets/icons/kaggle.png" alt="Kaggle logo">
+            </span>
+            <span class="profilecard__body">
+              <strong>Kaggle</strong>
+              <span class="profilecard__stat"><b>14</b> competitions · <b>6</b> datasets</span>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="profilecard" href="https://scholar.google.com/citations?user=89kgko4AAAAJ&hl=en" data-placeholder="profile-google-scholar">
+            <span class="profilecard__logo" aria-hidden="true">
+              <img src="assets/icons/scholar.png" alt="Google Scholar logo">
+            </span>
+            <span class="profilecard__body">
+              <strong>Google Scholar</strong>
+              <span class="profilecard__stat"><b>4</b> citations · h-index <b>2</b> · i10-index <b>0</b></span>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </aside>
+
+      <div class="profile-domain__domain" id="domain">
+        <header class="profiles__head">
+          <h2 class="panel__title" id="domain-title">Domain</h2>
+          <span class="panel__rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="domain__explorer">
+          <div class="domain__nodes" role="tablist" aria-label="Technical domains">
+            <button class="domain-node is-active" type="button" role="tab" aria-selected="true" aria-controls="domain-development" id="tab-development" data-domain="development">
+              <span class="domain-node__index">01</span><span>Development</span>
+            </button>
+            <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-aiml" id="tab-aiml" data-domain="aiml">
+              <span class="domain-node__index">02</span><span>AI / ML</span>
+            </button>
+            <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-robotics" id="tab-robotics" data-domain="robotics">
+              <span class="domain-node__index">03</span><span>Robotics</span>
+            </button>
+            <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-languages" id="tab-languages" data-domain="languages">
+              <span class="domain-node__index">04</span><span>Languages</span>
+            </button>
+          </div>
+
+          <div class="domain__details" aria-live="polite">
+            <article class="domain-panel is-active" id="domain-development" role="tabpanel" aria-labelledby="tab-development" data-domain-panel="development">
+              <div class="domain-skillgroup"><div class="skilltags"><span>FastAPI</span><span>Flask</span><span>Django</span><span>React</span><span>React Native</span>
+              <span>AWS</span><span>Docker</span><span>DVC</span><span>MLflow</span><span>Git</span></div></div>
+            </article>
+            <article class="domain-panel" id="domain-aiml" role="tabpanel" aria-labelledby="tab-aiml" data-domain-panel="aiml" hidden>
+              <div class="domain-skillgroup"><div class="skilltags"><span>PyTorch</span><span>TensorFlow</span><span>Scikit-Learn</span><span>Computer Vision</span><span>YOLO</span></div></div>
+            </article>
+            <article class="domain-panel" id="domain-robotics" role="tabpanel" aria-labelledby="tab-robotics" data-domain-panel="robotics" hidden>
+              <div class="domain-skillgroup"><div class="skilltags"><span>ROS2</span><span>MAVLink</span><span>Pixhawk</span><span>Behavior Trees</span><span>Gazebo</span>
+                <span>LiDAR</span><span>RGB-D Cameras</span><span>Kalman Filters</span><span>PointCloud Processing</span></div></div>
+            </article>
+            <article class="domain-panel" id="domain-languages" role="tabpanel" aria-labelledby="tab-languages" data-domain-panel="languages" hidden>
+              <div class="domain-skillgroup"><div class="skilltags"><span>Python</span><span>C / C++</span><span>SQL</span></div></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
     <!-- ============ EDUCATION ============ -->
   <section class="panel" id="education">
     <header class="panel__head">
@@ -182,58 +276,6 @@
     </ol>
   </section>
 
-    <!-- ============ TECHNICAL DOMAIN ============ -->
-  <section class="panel domain" id="domain">
-    <header class="panel__head">
-      <h2 class="panel__title">Domain</h2>
-      <span class="panel__rule" aria-hidden="true"></span>
-    </header>
-    <!-- <p class="domain__intro">A multidisciplinary technical practice spanning intelligent software, applied machine learning, and autonomous robotic systems. Explore each domain to view the associated tools and capabilities.</p> -->
-
-    <div class="domain__explorer">
-      <div class="domain__nodes" role="tablist" aria-label="Technical domains">
-        <button class="domain-node is-active" type="button" role="tab" aria-selected="true" aria-controls="domain-development" id="tab-development" data-domain="development">
-          <span class="domain-node__index">01</span><span>Development</span>
-        </button>
-        <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-aiml" id="tab-aiml" data-domain="aiml">
-          <span class="domain-node__index">02</span><span>AI / ML</span>
-        </button>
-        <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-robotics" id="tab-robotics" data-domain="robotics">
-          <span class="domain-node__index">03</span><span>Robotics</span>
-        </button>
-        <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-languages" id="tab-languages" data-domain="languages">
-          <span class="domain-node__index">04</span><span>Languages</span>
-        </button>
-      </div>
-
-      <div class="domain__details" aria-live="polite">
-        <article class="domain-panel is-active" id="domain-development" role="tabpanel" aria-labelledby="tab-development" data-domain-panel="development">
-          <p class="domain-panel__label">Software engineering &amp; infrastructure</p>
-          <h3>Development</h3>
-          <div class="domain-skillgroup"><strong>Web Technologies</strong><div class="skilltags"><span>FastAPI</span><span>Flask</span><span>Django</span><span>React</span><span>React Native</span></div></div>
-          <div class="domain-skillgroup"><strong>MLOps &amp; Infrastructure</strong><div class="skilltags"><span>AWS</span><span>Docker</span><span>DVC</span><span>MLflow</span><span>Git</span></div></div>
-        </article>
-        <article class="domain-panel" id="domain-aiml" role="tabpanel" aria-labelledby="tab-aiml" data-domain-panel="aiml" hidden>
-          <p class="domain-panel__label">Learning systems &amp; perception</p>
-          <h3>AI / Machine Learning</h3>
-          <div class="domain-skillgroup"><strong>Machine Learning</strong><div class="skilltags"><span>PyTorch</span><span>TensorFlow</span><span>Scikit-Learn</span><span>OpenCV</span><span>YOLO</span></div></div>
-          <div class="domain-skillgroup"><strong>Sensors &amp; Perception</strong><div class="skilltags"><span>LiDAR</span><span>RGB-D Cameras</span><span>Kalman Filters</span><span>PointCloud Processing</span></div></div>
-        </article>
-        <article class="domain-panel" id="domain-robotics" role="tabpanel" aria-labelledby="tab-robotics" data-domain-panel="robotics" hidden>
-          <p class="domain-panel__label">Robotics &amp; autonomous systems</p>
-          <h3>Robotics</h3>
-          <div class="domain-skillgroup"><strong>Robotics &amp; Autonomy</strong><div class="skilltags"><span>ROS2</span><span>MAVLink</span><span>Pixhawk</span><span>Behavior Trees</span><span>Gazebo</span></div></div>
-          <div class="domain-skillgroup"><strong>Sensors &amp; Perception</strong><div class="skilltags"><span>LiDAR</span><span>RGB-D Cameras</span><span>Kalman Filters</span><span>PointCloud Processing</span></div></div>
-        </article>
-        <article class="domain-panel" id="domain-languages" role="tabpanel" aria-labelledby="tab-languages" data-domain-panel="languages" hidden>
-          <p class="domain-panel__label">Programming foundations</p>
-          <h3>Languages</h3>
-          <div class="domain-skillgroup"><strong>Programming Languages</strong><div class="skilltags"><span>Python</span><span>C / C++</span><span>SQL</span></div></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ RESEARCH & PUBLICATIONS ============ -->
   <section class="panel" id="research">
     <header class="panel__head">
@@ -259,6 +301,21 @@
             <div class="pubcard__content">
               <h3>Physics-Guided Multiphase Flow Metering and Regime Identification Using Multi-Task PINNs with Condition-Aware Visualization</h3>
               <a class="pubcard__doi mono" href="#" data-placeholder="doi-multiphase">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pubcard">
+          <div class="pubcard__frame">
+            <div class="pubcard__figure">
+              <img src="assets/images/research/PIE2C.png" alt="PIE2C figure — replace with actual figure" data-placeholder="research-fig-2">
+            </div>
+          </div>
+          <div class="pubcard__body">
+            <p class="pubcard__journal mono">Fuel Processing Technology · Q1 · 2026</p>
+            <div class="pubcard__content">
+              <h3>Physics-Informed Embed-to-Control and Observe with Per-Producer MLP Heads for CO2 Storage Surrogate Modelling</h3>
+              <a class="pubcard__doi mono" href="#" data-placeholder="doi-multiphase">UNDER REVIEW</a>
             </div>
           </div>
         </article>
@@ -421,14 +478,12 @@
     </ul>
   </section>
 
-  <!-- ============ MEDIA OUTREACH ============ -->
+  <!-- ============ Public Relations & Media ============ -->
   <section class="panel media" id="media">
     <header class="panel__head">
-      <h2 class="panel__title">Media Outreach</h2>
+      <h2 class="panel__title">Public Relations & Media</h2>
       <span class="panel__rule" aria-hidden="true"></span>
     </header>
-    <p class="media__intro">Selected media coverage, public engagement, and stories highlighting research, engineering, and international competition work.</p>
-
     <div class="media__track" aria-label="Media coverage stories">
       <article class="media-card" data-placeholder="media-featured">
         <img src="assets/images/media/somoyTV.jpg" alt="Somoy TV coverage of BengalSub at RoboSub 2026" class="media-card__visual">
@@ -568,60 +623,6 @@
       <p>Our team Best_Trio secured 3rd place among 100+ teams nationwide.</p>
     </li>
   </ul>
-      </div>
-
-      <aside class="profiles" id="profiles" aria-labelledby="profiles-title">
-        <header class="profiles__head">
-          <h2 class="panel__title" id="profiles-title">Profiles</h2>
-          <span class="panel__rule" aria-hidden="true"></span>
-        </header>
-
-        <div class="profilelist">
-          <a class="profilecard" href="https://codeforces.com/profile/radwan1210" data-placeholder="profile-codeforces">
-            <span class="profilecard__logo profilecard__logo--codeforces" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </span>
-            <span class="profilecard__body">
-              <strong>Codeforces</strong>
-              <span class="profilecard__stat"><b data-placeholder-stat>—</b> Max rating: 1216 (Pupil)</span>
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          <a class="profilecard" href="https://leetcode.com/u/radwan121/" data-placeholder="profile-leetcode">
-            <span class="profilecard__logo" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M14.1 3.2 7.4 9.9a5.1 5.1 0 0 0 0 7.2 5.1 5.1 0 0 0 7.2 0l2-2-2.2-2.2-2 2a2 2 0 0 1-2.8 0 2 2 0 0 1 0-2.8l6.7-6.7-2.2-2.2Z"/><path d="M10.2 10.8h9.1v3.1h-9.1z"/></svg>
-            </span>
-            <span class="profilecard__body">
-              <strong>LeetCode</strong>
-              <span class="profilecard__stat"><b data-placeholder-stat>—</b> Problems solved: 200+</span>
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-          <a class="profilecard" href="https://www.kaggle.com/radwankhondokar" data-placeholder="profile-kaggle">
-            <span class="profilecard__logo" aria-hidden="true">
-              <img src="assets/icons/kaggle.png" alt="Kaggle logo">
-            </span>
-            <span class="profilecard__body">
-              <strong>Kaggle</strong>
-              <span class="profilecard__stat"><b>14</b> competitions · <b>6</b> datasets</span>
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          <a class="profilecard" href="https://scholar.google.com/citations?user=89kgko4AAAAJ&hl=en" data-placeholder="profile-google-scholar">
-            <span class="profilecard__logo" aria-hidden="true">
-              <img src="assets/icons/scholar.png" alt="Google Scholar logo">
-            </span>
-            <span class="profilecard__body">
-              <strong>Google Scholar</strong>
-              <span class="profilecard__stat"><b>4</b> citations · h-index <b>2</b> · i10-index <b>0</b></span>
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </aside>
-    </div>
   </section>
 
 </main>
