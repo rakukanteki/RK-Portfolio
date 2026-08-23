@@ -6,6 +6,10 @@
 <title>Khondokar Radwanur Rahman | Researcher &amp; Engineer</title>
 <meta name="description" content="Academic portfolio of Khondokar Radwanur Rahman — researcher in multimodal AI, physics-informed learning, and autonomous systems.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Iceland&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
 <script>
   (() => {
     const saved = localStorage.getItem('portfolio-theme');
@@ -24,10 +28,9 @@
 <!-- ============ NAV ============ -->
 <header class="siterail">
   <div class="siterail__id">
-    <!-- <a class="siterail__brand" href="#top" aria-label="Back to introduction">
-      <span class="siterail__monogram" aria-hidden="true">KR</span>
-      <span class="siterail__brandtext">Khondokar Radwanur Rahman</span>
-    </a> -->
+    <a class="siterail__brand" href="#top" aria-label="Back to introduction">
+      <span class="siterail__brandtext">Radwan Khondokar</span>
+    </a>
   </div>
   <nav class="siterail__nav" aria-label="Section navigation">
     <a href="#education" data-navlink data-index="01" data-label="Education">Education</a>
@@ -55,7 +58,7 @@
     <div class="hero__intro">
       <div class="hero__copy">
         <p class="eyebrow">Researcher · Engineer</p>
-        <h1 class="hero__name">Khondokar<br>Radwanur Rahman</h1>
+        <h1 class="hero__name">Khondokar Radwanur Rahman</h1>
         <div align="justify"> <p class="hero__role">My interests lie at the intersection of AI, physics-informed learning, mathematical modeling, privacy, and autonomous robotics.</p></div>
         <div class="hero__actions">
           <a class="button button--secondary" href="assets/files/Radwan_CV.pdf" download>Download CV</a>
@@ -209,25 +212,31 @@
       </div>
     </div>
   </section>
-    <!-- ============ EDUCATION ============ -->
+  <!-- ============ EDUCATION ============ -->
   <section class="panel" id="education">
     <header class="panel__head">
       <h2 class="panel__title">Education</h2>
       <span class="panel__rule" aria-hidden="true"></span>
     </header>
 
-    <div class="edurow">
-      <div class="edurow__time mono">MAR 2022 — JUL 2026</div>
-      <div class="edurow__body">
-        <h3>B.Sc. in Electrical and Computer Engineering</h3>
-        <p class="mono">Rajshahi University of Engineering and Technology (RUET) · Rajshahi, Bangladesh</p>
-      </div>
+    <div class="education-list">
+      <article class="education-item">
+        <div class="education-item__top">
+          <h3>Rajshahi University of Engineering and Technology <span>(RUET)</span></h3>
+          <time datetime="2022-03/2026-07">Mar. 2022 — Jul. 2026</time>
+        </div>
+        <p class="education-item__degree">B.Sc. in Electrical and Computer Engineering</p>
+        <p class="education-item__detail"><span>Location:</span> Rajshahi, Bangladesh</p>
+      </article>
 
-      <div class="edurow__time mono">APR 2018 — JUL 2020</div>
-      <div class="edurow__body">
-        <h3>Higher Secondary (General)</h3>
-        <p class="mono">Dhaka City College, Dhanmondi, Dhaka.</p>
-      </div>
+      <article class="education-item">
+        <div class="education-item__top">
+          <h3>Dhaka City College</h3>
+          <time datetime="2018-04/2020-07">Apr. 2018 — Jul. 2020</time>
+        </div>
+        <p class="education-item__degree">Higher Secondary (General)</p>
+        <p class="education-item__detail"><span>Location:</span> Dhanmondi, Dhaka</p>
+      </article>
     </div>
   </section>
 
@@ -278,16 +287,46 @@
   <!-- ============ RESEARCH & PUBLICATIONS ============ -->
   <section class="panel" id="research">
     <header class="panel__head">
-      <h2 class="panel__title">Research &amp; Publications</h2>
+      <h2 class="panel__title">Publications</h2>
       <span class="panel__rule" aria-hidden="true"></span>
     </header>
 
-    <div class="pubslider" data-pub-slider>
-      <div class="pubslider__controls" aria-label="Research publications navigation">
-        <button class="pubslider__button pubslider__button--prev" type="button" aria-label="Scroll publications left">←</button>
-        <button class="pubslider__button pubslider__button--next" type="button" aria-label="Scroll publications right">→</button>
-      </div>
+    <div class="publication-overview">
+      <dl class="publication-stats">
+        <div class="publication-stat">
+          <dt>Overall</dt>
+          <dd><strong>8</strong> accepted · <strong>4</strong> Under Review</dd>
+        </div>
+        <div class="publication-stat">
+          <dt>Q1 Journals</dt>
+          <dd><strong>3</strong> articles (Elsevier, IEEE Transactions, and Nature)</dd>
+        </div>
+        <div class="publication-stat">
+          <dt>Conferences</dt>
+          <dd><strong>2</strong> international conference paper.</dd>
+        </div>
+        <div class="publication-stat">
+          <dt>Technical Reports</dt>
+          <dd><strong>3</strong> technical design reports.</dd>
+        </div>
+      </dl>
 
+      <aside class="publication-profile" aria-label="Publication profile: eight accepted and four under review">
+        <p class="publication-profile__label mono">Publication profile</p>
+        <div class="publication-profile__content">
+          <div class="publication-donut" role="img" aria-label="67 percent accepted and 33 percent under review">
+            <b class="publication-donut__value publication-donut__value--accepted" aria-hidden="true">67%</b>
+            <b class="publication-donut__value publication-donut__value--review" aria-hidden="true">33%</b>
+          </div>
+          <div class="publication-legend">
+            <p><i class="publication-legend__dot publication-legend__dot--accepted"></i><span>Accepted</span><strong>8 / 12 — 67%</strong></p>
+            <p><i class="publication-legend__dot publication-legend__dot--review"></i><span>Under review</span><strong>4 / 12 — 33%</strong></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="pubslider" data-pub-slider>
       <div class="pubslider__track">
         <article class="pubcard">
           <div class="pubcard__frame">
@@ -304,7 +343,7 @@
           </div>
         </article>
 
-        <article class="pubcard">
+        <!-- <article class="pubcard">
           <div class="pubcard__frame">
             <div class="pubcard__figure">
               <img src="assets/images/research/PIE2C.png" alt="PIE2C figure — replace with actual figure" data-placeholder="research-fig-2">
@@ -317,7 +356,7 @@
               <a class="pubcard__doi mono" href="#" data-placeholder="doi-multiphase">UNDER REVIEW</a>
             </div>
           </div>
-        </article>
+        </article> -->
 
         <article class="pubcard">
           <div class="pubcard__frame">
@@ -380,6 +419,8 @@
         </article>
       </div>
     </div>
+
+    <p class="publication-more">For more, visit <a href="https://scholar.google.com/citations?user=89kgko4AAAAJ&amp;hl=en">Scholar Profile <span aria-hidden="true">↗</span></a></p>
   </section>
 
   <!-- ============ PROJECTS ============ -->
