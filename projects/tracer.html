@@ -1,25 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tracer | Khondokar Radwanur Rahman</title>
-<meta name="description" content="Built and deployed an MTPINN at HBKU, Qatar, combining physics-informed learning and multimodal digital twin validation for real-time flow regime classification and velocity estimation, achieving 96.12% ± 2.3% accuracy.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Tracer | Khondokar Radwanur Rahman</title>
+  <meta name="description" content="Tracer: a physics-guided multi-task neural network for gas-liquid flow regime classification, superficial velocity estimation, and condition-aware video retrieval.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Tracer — Physics-Guided Multiphase Flow Monitoring">
+  <meta property="og:description" content="Multi-task learning, pressure-signal analysis, physics constraints, and condition-aware flow visualization.">
+  <meta property="og:image" content="../assets/images/projects/tracer.png">
 
-<script>
-  (() => {
-    const saved = localStorage.getItem('portfolio-theme');
-    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.dataset.theme = saved || preferred;
-  })();
-</script>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('portfolio-theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = saved === 'dark' || saved === 'light' ? saved : preferred;
+      } catch (_) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
 
-<link rel="stylesheet" href="../css/styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Source+Serif+4:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Source+Serif+4:wght@400;600;700&amp;display=swap" rel="stylesheet">
+
+  <!-- Page-specific additions: existing global CSS continues to control colors and typography. -->
+  <style>
+    /* Justify long-form prose without affecting headings, navigation, metrics or tables. */
+    .project-detail__header > p:not(.eyebrow),
+    .project-detail__section > p,
+    .tracer-panel > p {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      overflow-wrap: break-word;
+    }
+    @media (max-width: 640px) {
+      .project-detail__header > p:not(.eyebrow),
+      .project-detail__section > p,
+      .tracer-panel > p { text-align: left; }
+    }
+    .tracer-meta, .tracer-metrics, .tracer-grid, .tracer-steps { display: grid; gap: 1rem; }
+    .tracer-meta { grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); margin: 2rem 0; }
+    .tracer-meta div { border-top: 1px solid currentColor; padding-top: .65rem; }
+    .tracer-meta dt, .tracer-metric__label { font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; opacity: .66; }
+    .tracer-meta dd { margin: .35rem 0 0; font-weight: 600; }
+    .tracer-metrics { grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); margin: 1.5rem 0; }
+    .tracer-metric { border: 1px solid; border-color: color-mix(in srgb, currentColor 22%, transparent); padding: 1.15rem; border-radius: 5px; }
+    .tracer-metric__value { display: block; font-family: 'Source Serif 4', serif; font-size: clamp(1.35rem, 2.6vw, 2rem); line-height: 1.25; font-weight: 600; margin-bottom: .5rem; }
+    .tracer-metric__note { display: block; font-size: .83rem; opacity: .7; margin-top: .4rem; }
+    .tracer-grid { grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); margin: 1.4rem 0; }
+    .tracer-panel { border-top: 1px solid; border-color: color-mix(in srgb, currentColor 27%, transparent); padding-top: .8rem; }
+    .tracer-panel h3 { margin-top: .25rem; }
+    .tracer-steps { grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); list-style: none; padding: 0; margin: 1.4rem 0; counter-reset: process; }
+    .tracer-steps li { counter-increment: process; border-top: 1px solid; border-color: color-mix(in srgb, currentColor 28%, transparent); padding-top: .85rem; }
+    .tracer-steps li::before { content: '0' counter(process); display: block; font-weight: 700; font-size: .85rem; opacity: .6; margin-bottom: .5rem; }
+    .tracer-steps strong { display: block; margin-bottom: .35rem; }
+    .tracer-steps span { display: block; font-size: .94rem; }
+    .tracer-table-wrap { overflow-x: auto; margin: 1.3rem 0; }
+    .tracer-table { width: 100%; border-collapse: collapse; font-size: .94rem; }
+    .tracer-table th, .tracer-table td { padding: .8rem .75rem; text-align: left; border-bottom: 1px solid; border-color: color-mix(in srgb, currentColor 20%, transparent); }
+    .tracer-table th { font-weight: 700; }
+    .tracer-notes { font-size: .9rem; opacity: .75; }
+    .tracer-link-list { display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; margin: 1.2rem 0; }
+    .tracer-link-list a { text-underline-offset: .2em; }
+    .tracer-caption { margin-top: .5rem; font-size: .85rem; opacity: .7; }
+    .tracer-equation { overflow-x: auto; padding: 1rem; text-align: center; font-family: 'Source Serif 4', serif; border: 1px solid; border-color: color-mix(in srgb, currentColor 18%, transparent); }
+    .tracer-skip { position: absolute; top: -5rem; left: 1rem; background: #fff; color: #000; padding: .75rem; z-index: 1000; }
+    .tracer-skip:focus { top: 1rem; }
+    @media (max-width: 640px) { .tracer-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tracer-metric { padding: .8rem; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
 </head>
 <body id="top">
+<a class="tracer-skip" href="#main-content">Skip to content</a>
 <header class="siterail">
   <div class="siterail__id">
     <a class="siterail__brand" href="../index.html#top" aria-label="Back to introduction">
@@ -39,20 +97,143 @@
     <span class="theme-toggle__sun" aria-hidden="true">☼</span>
     <span class="theme-toggle__moon" aria-hidden="true">☾</span>
   </button>
-  <button class="siterail__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+  <button class="siterail__toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
-<main class="project-detail">
-<a class="project-back" href="../index.html#projects">← All projects</a>
-<article>
-<header class="project-detail__header"><p class="eyebrow">Project 04</p><h1>Tracer</h1><p>Built and deployed an MTPINN at HBKU, Qatar, combining physics-informed learning and multimodal digital twin validation for real-time flow regime classification and velocity estimation, achieving 96.12% ± 2.3% accuracy.</p><a class="button button--secondary" href="https://github.com/rakukanteki/Multiphase-Flow-Regime-Code.git" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></header>
-<figure class="project-detail__figure"><img src="../assets/images/projects/tracer.png" alt="Tracer" fetchpriority="high"><figcaption>Tracer — project overview.</figcaption></figure>
-<section class="project-detail__section"><h2>Physics-informed learning</h2><p>The multi-task physics-informed neural network combines flow regime classification and velocity estimation.</p></section><section class="project-detail__section"><h2>Validation</h2><p>The project was built and deployed at HBKU, Qatar, using multimodal digital twin validation. The reported accuracy is 96.12% ± 2.3%.</p></section>
 
-</article>
-<nav class="project-detail__nav" aria-label="Project navigation"><a href="../index.html#projects">← All projects</a><a href="agrovision.html">Next project →</a></nav>
+<main class="project-detail" id="main-content">
+  <a class="project-back" href="../index.html#projects">← All projects</a>
+  <article>
+    <header class="project-detail__header">
+      <p class="eyebrow">Project 04 / Applied AI &amp; Physics-Informed Learning | QU and HBKU Research Project</p>
+      <h1>Tracer</h1>
+      <p>Physics-guided multiphase flow metering and regime identification using multi-task learning and condition-aware visualization.</p>
+      <p>Developed a framework that analyzes pressure measurements to identify gas–liquid flow regimes, estimate gas and liquid superficial velocities, and retrieve matching flow videos for visual interpretation. The system integrates temporal learning, spectral features, and physical consistency constraints.</p>
+      <a class="button button--secondary" href="https://github.com/rakukanteki/Multiphase-Flow-Regime-Code" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>
+    </header>
+
+    <dl class="tracer-meta" aria-label="Project details">
+      <div><dt>Research area</dt><dd>Physics-informed AI</dd></div>
+      <div><dt>Application</dt><dd>Gas–liquid two-phase flow</dd></div>
+      <div><dt>Approach</dt><dd>Multi-task temporal learning</dd></div>
+      <div><dt>Context</dt><dd>HBKU, Qatar</dd></div>
+    </dl>
+
+    <figure class="project-detail__figure">
+      <img src="../assets/images/projects/tracer.png" alt="Tracer project overview illustrating physics-guided flow regime monitoring" fetchpriority="high" decoding="async">
+      <figcaption>Tracer — physics-guided flow monitoring and condition-aware visualization.</figcaption>
+    </figure>
+
+    <section class="project-detail__section" id="overview">
+      <h2>Overview</h2>
+      <p>Recognizing flow patterns and measuring phase velocities are essential for monitoring pipelines and multiphase processes. Conventional approaches can depend on intrusive instrumentation, while purely data-driven models may return predictions that conflict with the underlying flow physics.</p>
+      <p>Tracer combines sensor-based learning with physical constraints. Rather than building separate systems for classification and metering, one model learns both tasks from pressure-signal characteristics. Its estimated operating conditions also provide a way to retrieve visually comparable flow states from a video library.</p>
+    </section>
+
+    <section class="project-detail__section" id="results">
+      <h2>Results at a glance</h2>
+      <div class="tracer-metrics">
+        <div class="tracer-metric"><span class="tracer-metric__value">95.96% <small>± 3.13%</small></span><span class="tracer-metric__label">Cross-validation accuracy</span><span class="tracer-metric__note">Five-fold GroupKFold</span></div>
+        <div class="tracer-metric"><span class="tracer-metric__value">92.86%</span><span class="tracer-metric__label">Held-out classification accuracy</span><span class="tracer-metric__note">Best-fold test split</span></div>
+        <div class="tracer-metric"><span class="tracer-metric__value">0.0537 <small>m/s</small></span><span class="tracer-metric__label">Gas superficial velocity MAE</span></div>
+        <div class="tracer-metric"><span class="tracer-metric__value">0.2557 <small>m/s</small></span><span class="tracer-metric__label">Liquid superficial velocity MAE</span></div>
+        <div class="tracer-metric"><span class="tracer-metric__value">76.43%</span><span class="tracer-metric__label">Top-1 video retrieval</span><span class="tracer-metric__note">Reported real-time system result</span></div>
+      </div>
+      <p class="tracer-notes">Metrics follow the public repository README. The cross-validation average and held-out best-fold figures describe different evaluation summaries and should not be treated as interchangeable.</p>
+    </section>
+
+    <section class="project-detail__section" id="pipeline">
+      <h2>System workflow</h2>
+      <ol class="tracer-steps">
+        <li><strong>Pressure acquisition</strong><span>Collect temporal pressure measurements from the flow system.</span></li>
+        <li><strong>Feature extraction</strong><span>Combine temporal patterns with FFT-based spectral and statistical descriptors.</span></li>
+        <li><strong>Multi-task inference</strong><span>Classify flow regime and regress gas and liquid superficial velocities.</span></li>
+        <li><strong>Physics guidance</strong><span>Use momentum-related and mass-conservation residuals during training.</span></li>
+        <li><strong>Visual retrieval</strong><span>Match predicted operating conditions against a library of flow videos.</span></li>
+      </ol>
+    </section>
+
+    <section class="project-detail__section" id="architecture">
+      <h2>Model architecture</h2>
+      <p>The model brings together two complementary representations of the pressure data: a temporal encoder for time-dependent behavior and a feature branch for derived statistical and frequency-domain information. Their learned representation feeds multiple prediction heads.</p>
+      <div class="tracer-grid">
+        <div class="tracer-panel"><h3>Temporal encoder</h3><p>A temporal convolutional network (TCN) learns patterns in pressure-signal sequences associated with different flow states.</p></div>
+        <div class="tracer-panel"><h3>Spectral feature branch</h3><p>FFT-derived features and summary statistics provide complementary information about pressure fluctuations and their dominant frequencies.</p></div>
+        <div class="tracer-panel"><h3>Classification head</h3><p>Predicts one of three flow regimes: dispersed flow, plug flow, or slug flow.</p></div>
+        <div class="tracer-panel"><h3>Regression heads</h3><p>Estimate gas superficial velocity (V<sub>sg</sub>) and liquid superficial velocity (V<sub>sl</sub>) from the shared representation.</p></div>
+      </div>
+    </section>
+
+    <section class="project-detail__section" id="physics">
+      <h2>Physics-informed learning</h2>
+      <p>In addition to supervised classification and regression objectives, the training procedure uses a drift-flux / Darcy–Weisbach-based physics residual and a steady incompressible mass-conservation residual. These encourage predicted operating conditions to remain consistent with the flow model.</p>
+      <p>The combined objective covers five loss components: flow regime classification, gas velocity regression, liquid velocity regression, momentum-related physics consistency, and mass conservation. Homoscedastic uncertainty weighting learns how these terms contribute during training instead of assigning every objective a fixed manual weight.</p>
+      <div class="tracer-equation" role="img" aria-label="Total loss is the uncertainty-weighted combination of classification, gas velocity, liquid velocity, momentum physics, and mass conservation losses.">
+        L<sub>total</sub> = weighted combination of { L<sub>classification</sub>, L<sub>gas</sub>, L<sub>liquid</sub>, L<sub>physics</sub>, L<sub>mass</sub> }
+      </div>
+      <p class="tracer-caption">Conceptual expression; the full implementation, including weighting and residual definitions, is available in the code repository.</p>
+    </section>
+
+    <section class="project-detail__section" id="evaluation">
+      <h2>Experimental evaluation</h2>
+      <p>The repository reports leakage-aware, file-grouped five-fold cross-validation and a held-out classification report for a selected best-fold model. The three flow regimes were evaluated using per-class precision, recall, and F1-score.</p>
+      <div class="tracer-table-wrap">
+        <table class="tracer-table">
+          <caption>Held-out test classification results — best-fold model</caption>
+          <thead><tr><th scope="col">Flow regime</th><th scope="col">Precision</th><th scope="col">Recall</th><th scope="col">F1-score</th><th scope="col">Samples</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Dispersed</th><td>1.0000</td><td>1.0000</td><td>1.0000</td><td>18</td></tr>
+            <tr><th scope="row">Plug</th><td>0.8947</td><td>0.8947</td><td>0.8947</td><td>19</td></tr>
+            <tr><th scope="row">Slug</th><td>0.8947</td><td>0.8947</td><td>0.8947</td><td>19</td></tr>
+            <tr><th scope="row">Weighted average</th><td>0.9286</td><td>0.9286</td><td>0.9286</td><td>56</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>All 18 dispersed-flow examples in this held-out split were correctly classified. Plug and slug flows had lower, matching per-class F1-scores, indicating that distinguishing these two regimes remained the more difficult classification task in this evaluation.</p>
+    </section>
+
+    <section class="project-detail__section" id="retrieval">
+      <h2>Condition-aware visual retrieval</h2>
+      <p>Tracer extends numerical predictions with a visualization layer. Predicted superficial velocities describe the inferred operating condition; the retrieval module uses these conditions to identify relevant videos in an existing flow library.</p>
+      <p>The repository reports <strong>76.43% Top-1 retrieval performance</strong> for its real-time retrieval system. By connecting sensor measurements, inferred flow behavior, and visual references, this module provides a way to inspect the model's output beyond a class label alone.</p>
+    </section>
+
+    <section class="project-detail__section" id="implementation">
+      <h2>Implementation</h2>
+      <p>The public Python codebase separates feature engineering, grouped data splitting, temporal modeling, physical losses, training and evaluation, baseline ablations, and visual retrieval into dedicated modules.</p>
+      <div class="tracer-grid">
+        <div class="tracer-panel"><h3>Learning pipeline</h3><p>Temporal convolutional encoder, multi-task prediction heads, and uncertainty-weighted objectives.</p></div>
+        <div class="tracer-panel"><h3>Validation</h3><p>GroupKFold orchestration, held-out evaluation, regression metrics, and classical machine-learning baseline experiments.</p></div>
+        <div class="tracer-panel"><h3>Retrieval module</h3><p>Video-library metadata, candidate matching, and video display/player utilities.</p></div>
+      </div>
+      <div class="tracer-link-list">
+        <a href="https://github.com/rakukanteki/Multiphase-Flow-Regime-Code/tree/main/pinn" target="_blank" rel="noopener noreferrer">Model and training code ↗</a>
+        <a href="https://github.com/rakukanteki/Multiphase-Flow-Regime-Code/tree/main/ablation" target="_blank" rel="noopener noreferrer">Ablation studies ↗</a>
+        <a href="https://github.com/rakukanteki/Multiphase-Flow-Regime-Code/tree/main/retrieval" target="_blank" rel="noopener noreferrer">Video retrieval code ↗</a>
+        <a href="https://github.com/rakukanteki/Multiphase-Flow-Regime-Code/tree/main/results" target="_blank" rel="noopener noreferrer">Results ↗</a>
+      </div>
+    </section>
+
+    <section class="project-detail__section" id="significance">
+      <h2>Research significance</h2>
+      <p>This project investigates how physical constraints can be integrated with temporal and spectral learning to infer multiple aspects of a flow state from pressure measurements. Its multi-task formulation links discrete regime identification with continuous flow metering, while the retrieval component connects predicted operating conditions with visual examples.</p>
+      <p>The current evaluation supports the approach on the reported experimental data. Testing across additional facilities, sensor configurations, and operating conditions would be valuable for establishing broader deployment generalization.</p>
+    </section>
+
+    <section class="project-detail__section" id="resources">
+      <h2>Repository</h2>
+      <p>Explore the implementation, evaluation outputs, and visual retrieval components in the public source repository.</p>
+      <a class="button button--secondary" href="https://github.com/rakukanteki/Multiphase-Flow-Regime-Code" target="_blank" rel="noopener noreferrer">Explore Tracer on GitHub ↗</a>
+    </section>
+  </article>
+
+  <nav class="project-detail__nav" aria-label="Project navigation">
+    <a href="../index.html#projects">← All projects</a>
+    <a href="agrovision.html">Next project →</a>
+  </nav>
 </main>
-<button class="backtotop" id="backToTop" aria-label="Back to top">↑</button>
+<button class="backtotop" id="backToTop" type="button" aria-label="Back to top">↑</button>
 <script src="../js/main.js"></script>
-</body></html>
+</body>
+</html>
