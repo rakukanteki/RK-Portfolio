@@ -49,6 +49,14 @@ Projects · Education · Recognitions · Contact (footer)
 
 ## Notes
 
+- Publication search, type/year/area filters, and reset controls
+  are implemented in `js/main.js`, adapted from `Publications.tsx` for this static site.
+  Maintain `data-type`, `data-year`, and `data-area` on each
+  publication card in `index.html`. Optional `data-authors` enables author search.
+  Missing metadata uses “Not specified”; filters cover only listed cards,
+  while the overview describes the broader portfolio. The referenced TSX content
+  modules are not included. All cards remain readable when JavaScript is disabled.
+
 - Fonts are loaded from Google Fonts via `<link>` tags in `index.html`
   (Space Grotesk, IBM Plex Sans, IBM Plex Mono) — an internet connection is
   needed the first time a visitor loads the page.

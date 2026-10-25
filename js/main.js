@@ -37,40 +37,6 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ============================================================
-// Interactive technical domains
-// ============================================================
-const domainNodes = [...document.querySelectorAll('[data-domain]')];
-const domainPanels = [...document.querySelectorAll('[data-domain-panel]')];
-
-const showDomain = (domain) => {
-  domainNodes.forEach(node => {
-    const active = node.dataset.domain === domain;
-    node.classList.toggle('is-active', active);
-    node.setAttribute('aria-selected', String(active));
-    node.tabIndex = active ? 0 : -1;
-  });
-
-  domainPanels.forEach(panel => {
-    const active = panel.dataset.domainPanel === domain;
-    panel.classList.toggle('is-active', active);
-    panel.hidden = !active;
-  });
-};
-
-domainNodes.forEach((node, index) => {
-  node.addEventListener('mouseenter', () => showDomain(node.dataset.domain));
-  node.addEventListener('focus', () => showDomain(node.dataset.domain));
-  node.addEventListener('click', () => showDomain(node.dataset.domain));
-  node.addEventListener('keydown', (event) => {
-    if (!['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft'].includes(event.key)) return;
-    event.preventDefault();
-    const direction = ['ArrowDown', 'ArrowRight'].includes(event.key) ? 1 : -1;
-    const next = (index + direction + domainNodes.length) % domainNodes.length;
-    domainNodes[next].focus();
-  });
-});
-
-// ============================================================
 // Active section highlight in nav
 // ============================================================
 const sections = document.querySelectorAll('main section[id], footer[id]');
@@ -92,6 +58,65 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
 
 sections.forEach(section => sectionObserver.observe(section));
+
+// ============================================================
+// Publication search and filters (progressive enhancement)
+// ============================================================
+const publicationFilters = document.getElementById('publicationFilters');
+if (publicationFilters) {
+  const cards = [...document.querySelectorAll('#publicationList .pubcard')];
+  const query = document.getElementById('publicationQuery');
+  const selects = {
+    type: document.getElementById('publicationType'),
+    year: document.getElementById('publicationYear'),
+    area: document.getElementById('publicationArea'),
+  };
+  const count = document.getElementById('publicationCount');
+  const empty = document.getElementById('publicationEmpty');
+  const normalize = value => value.normalize('NFKC').toLocaleLowerCase().replace(/\s+/g, ' ').trim();
+  const entries = cards.map(card => ({
+    card,
+    type: card.dataset.type || 'Not specified',
+    year: card.dataset.year || 'Not specified',
+    area: card.dataset.area || 'Not specified',
+    search: normalize([card.textContent, card.dataset.authors || '', card.dataset.area || ''].join(' ')),
+  }));
+
+  Object.entries(selects).forEach(([key, select]) => {
+    const values = [...new Set([
+      ...entries.map(entry => entry[key]),
+      ...(key === 'type' ? ['TDRs'] : []),
+    ])];
+    values.sort((a, b) => key === 'year' ? b.localeCompare(a, undefined, { numeric: true }) : a.localeCompare(b));
+    values.forEach(value => select.add(new Option(value, value)));
+  });
+
+  const render = () => {
+    const terms = normalize(query.value).split(' ').filter(Boolean);
+    let visible = 0;
+    entries.forEach(entry => {
+      const matches = terms.every(term => entry.search.includes(term))
+        && Object.entries(selects).every(([key, select]) => select.value === 'All' || entry[key] === select.value);
+      entry.card.hidden = !matches;
+      if (matches) visible++;
+    });
+    count.textContent = `${visible} ${visible === 1 ? 'entry' : 'entries'} of ${entries.length}`;
+    empty.hidden = visible !== 0;
+  };
+
+  query.addEventListener('input', render);
+  Object.values(selects).forEach(select => select.addEventListener('change', render));
+  document.querySelectorAll('[data-reset-publications]').forEach(button => {
+    button.addEventListener('click', () => {
+      query.value = '';
+      Object.values(selects).forEach(select => { select.value = 'All'; });
+      render();
+      query.focus();
+    });
+  });
+  render();
+  publicationFilters.hidden = false;
+}
 
 // ============================================================
 // Research publications slider

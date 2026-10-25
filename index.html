@@ -36,7 +36,6 @@
     <a href="#experience" data-navlink data-index="02" data-label="Experience">Experience</a>
     <a href="#research" data-navlink data-index="03" data-label="Research">Research</a>
     <a href="#projects" data-navlink data-index="06" data-label="Projects">Projects</a>
-    <a href="#writing" data-navlink data-index="04" data-label="Writing">Blogs</a>
     <a href="#media" data-navlink data-index="05" data-label="Media Outreach">Media</a>
     <a href="#recognitions" data-navlink data-index="08" data-label="Recognitions">Recognitions</a>
     <a href="#contact" data-navlink data-index="09" data-label="Contact">Contact</a>
@@ -113,103 +112,6 @@
     </div>
   </section>
 
-  <!-- ============ Profile + Domain ==============-->
-  <section class="panel profile-domain">
-    <div class="profile-domain__layout">
-      <aside class="profiles" id="profiles" aria-labelledby="profiles-title">
-        <header class="profiles__head">
-          <h2 class="panel__title" id="profiles-title">Profiles</h2>
-          <span class="panel__rule" aria-hidden="true"></span>
-        </header>
-
-        <div class="profilelist">
-          <a class="profilecard" href="https://codeforces.com/profile/radwan1210" data-placeholder="profile-codeforces">
-            <span class="profilecard__logo profilecard__logo--codeforces" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </span>
-            <span class="profilecard__body">
-              <strong>Codeforces</strong>
-              <span class="profilecard__stat"><b data-placeholder-stat>—</b> Max rating: 1216 (Pupil)</span>
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          <a class="profilecard" href="https://leetcode.com/u/radwan121/" data-placeholder="profile-leetcode">
-            <span class="profilecard__logo" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M14.1 3.2 7.4 9.9a5.1 5.1 0 0 0 0 7.2 5.1 5.1 0 0 0 7.2 0l2-2-2.2-2.2-2 2a2 2 0 0 1-2.8 0 2 2 0 0 1 0-2.8l6.7-6.7-2.2-2.2Z"/><path d="M10.2 10.8h9.1v3.1h-9.1z"/></svg>
-            </span>
-            <span class="profilecard__body">
-              <strong>LeetCode</strong>
-              <span class="profilecard__stat"><b data-placeholder-stat>—</b> Problems solved: 200+</span>
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-          <a class="profilecard" href="https://www.kaggle.com/radwankhondokar" data-placeholder="profile-kaggle">
-            <span class="profilecard__logo" aria-hidden="true">
-              <img src="assets/icons/kaggle.png" alt="Kaggle logo">
-            </span>
-            <span class="profilecard__body">
-              <strong>Kaggle</strong>
-              <span class="profilecard__stat"><b>14</b> competitions · <b>6</b> datasets</span>
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          <a class="profilecard" href="https://scholar.google.com/citations?user=89kgko4AAAAJ&hl=en" data-placeholder="profile-google-scholar">
-            <span class="profilecard__logo" aria-hidden="true">
-              <img src="assets/icons/scholar.png" alt="Google Scholar logo">
-            </span>
-            <span class="profilecard__body">
-              <strong>Google Scholar</strong>
-              <span class="profilecard__stat"><b>4</b> citations · h-index <b>2</b> · i10-index <b>0</b></span>
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </aside>
-
-      <div class="profile-domain__domain" id="domain">
-        <header class="profiles__head">
-          <h2 class="panel__title" id="domain-title">Domain</h2>
-          <span class="panel__rule" aria-hidden="true"></span>
-        </header>
-
-        <div class="domain__explorer">
-          <div class="domain__nodes" role="tablist" aria-label="Technical domains">
-            <button class="domain-node is-active" type="button" role="tab" aria-selected="true" aria-controls="domain-development" id="tab-development" data-domain="development">
-              <span class="domain-node__index">01</span><span>Development</span>
-            </button>
-            <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-aiml" id="tab-aiml" data-domain="aiml">
-              <span class="domain-node__index">02</span><span>AI / ML</span>
-            </button>
-            <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-robotics" id="tab-robotics" data-domain="robotics">
-              <span class="domain-node__index">03</span><span>Robotics</span>
-            </button>
-            <button class="domain-node" type="button" role="tab" aria-selected="false" aria-controls="domain-languages" id="tab-languages" data-domain="languages">
-              <span class="domain-node__index">04</span><span>Languages</span>
-            </button>
-          </div>
-
-          <div class="domain__details" aria-live="polite">
-            <article class="domain-panel is-active" id="domain-development" role="tabpanel" aria-labelledby="tab-development" data-domain-panel="development">
-              <div class="domain-skillgroup"><div class="skilltags"><span>FastAPI</span><span>Flask</span><span>Django</span><span>React</span><span>React Native</span>
-              <span>AWS</span><span>Docker</span><span>DVC</span><span>MLflow</span><span>Git</span></div></div>
-            </article>
-            <article class="domain-panel" id="domain-aiml" role="tabpanel" aria-labelledby="tab-aiml" data-domain-panel="aiml" hidden>
-              <div class="domain-skillgroup"><div class="skilltags"><span>PyTorch</span><span>TensorFlow</span><span>Scikit-Learn</span><span>Computer Vision</span><span>YOLO</span></div></div>
-            </article>
-            <article class="domain-panel" id="domain-robotics" role="tabpanel" aria-labelledby="tab-robotics" data-domain-panel="robotics" hidden>
-              <div class="domain-skillgroup"><div class="skilltags"><span>ROS2</span><span>MAVLink</span><span>Pixhawk</span><span>Behavior Trees</span><span>Gazebo</span>
-                <span>LiDAR</span><span>RGB-D Cameras</span><span>Kalman Filters</span><span>PointCloud Processing</span></div></div>
-            </article>
-            <article class="domain-panel" id="domain-languages" role="tabpanel" aria-labelledby="tab-languages" data-domain-panel="languages" hidden>
-              <div class="domain-skillgroup"><div class="skilltags"><span>Python</span><span>C / C++</span><span>SQL</span></div></div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- ============ EDUCATION ============ -->
   <section class="panel" id="education">
     <header class="panel__head">
@@ -272,6 +174,14 @@
         </div>
       </li>
       <li class="explog__entry">
+        <div class="explog__time mono">DEC 2023 — MAR 2026</div>
+        <div class="explog__body">
+          <h3>Student Research Assistant</h3>
+          <p class="explog__org mono">Rajshahi University of Engineering and Technology</p>
+            <div align="justify"> <p>Worked as a Research Assistant under the supervision of Md. Faysal Ahamed, Assistant Professor, Department of Electrical and Computer Engineering (ECE), RUET, conducting research in 𝗠𝘂𝗹𝘁𝗶𝗺𝗼𝗱𝗮𝗹 𝗔𝗜, 𝗩𝗶𝘀𝗶𝗼𝗻-𝗟𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝗠𝗼𝗱𝗲𝗹𝘀 (𝗩𝗟𝗠𝘀), 𝗘𝘅𝗽𝗹𝗮𝗶𝗻𝗮𝗯𝗹𝗲 𝗔𝗜 (𝗫𝗔𝗜), and 𝗘𝗱𝗴𝗲 𝗔𝗜. Contributed to the development of a 𝗥𝗢𝗦𝟮-𝗯𝗮𝘀𝗲𝗱 𝗮𝘂𝘁𝗼𝗻𝗼𝗺𝗼𝘂𝘀 𝘄𝗵𝗲𝗲𝗹𝗰𝗵𝗮𝗶𝗿 integrating adaptive navigation and LLM-driven conversational control, investigated 𝗽𝗮𝗿𝗮𝗺𝗲𝘁𝗲𝗿-𝗲𝗳𝗳𝗶𝗰𝗶𝗲𝗻𝘁 𝗳𝗶𝗻𝗲-𝘁𝘂𝗻𝗶𝗻𝗴 of SmolVLM for visual question answering and edge deployment. Research outcomes include publications in 𝗜𝗘𝗘𝗘 𝗜𝗖𝗖𝗜𝗧 𝟮𝟬𝟮𝟱 and along with an accepted paper at 𝗜𝗘𝗘𝗘 𝗕𝗘𝗖𝗜𝗧𝗛𝗖𝗢𝗡 𝟮𝟬𝟮𝟲</p> </div>
+        </div>
+      </li>
+      <li class="explog__entry">
         <div class="explog__time mono">SEP 2025 — FEB 2026</div>
         <div class="explog__body">
           <h3>AI Trainer</h3>
@@ -324,9 +234,24 @@
       </aside>
     </div>
 
+    <div class="publication-filters" id="publicationFilters" hidden>
+      <div class="publication-toolbar">
+        <label class="publication-search">Search publications
+          <input id="publicationQuery" type="search" placeholder="Search titles, authors, or research areas…" aria-controls="publicationList">
+        </label>
+        <label>Publication type<select id="publicationType" aria-controls="publicationList"><option value="All">All types</option></select></label>
+        <label>Year<select id="publicationYear" aria-controls="publicationList"><option value="All">All years</option></select></label>
+        <label>Research area<select id="publicationArea" aria-controls="publicationList"><option value="All">All areas</option></select></label>
+      </div>
+      <div class="publication-results">
+        <span id="publicationCount" role="status" aria-live="polite" aria-atomic="true"></span>
+        <button type="button" data-reset-publications>Reset filters</button>
+      </div>
+    </div>
+
     <div class="pubslider" data-pub-slider>
-      <div class="pubslider__track">
-        <article class="pubcard">
+      <div class="pubslider__track" id="publicationList">
+        <article class="pubcard" data-type="Journal Articles" data-year="2026" data-area="Physics-informed learning" data-status="Not specified">
           <div class="pubcard__frame">
             <div class="pubcard__figure">
               <img src="assets/images/research/MTPINN.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
@@ -341,22 +266,22 @@
           </div>
         </article>
 
-        <!-- <article class="pubcard">
+        <article class="pubcard" data-type="Journal Articles" data-year="2026" data-area="Physics-informed learning" data-status="Not specified">
           <div class="pubcard__frame">
             <div class="pubcard__figure">
-              <img src="assets/images/research/PIE2C.png" alt="PIE2C figure — replace with actual figure" data-placeholder="research-fig-2">
+              <img src="assets/images/research/PIMNN.png" alt="PIMNN method" data-placeholder="research-fig-2">
             </div>
           </div>
           <div class="pubcard__body">
-            <p class="pubcard__journal mono">Fuel Processing Technology · Q1 · 2026</p>
+            <p class="pubcard__journal mono">Process Safety and Environmental Protection · Q1 · 2026</p>
             <div class="pubcard__content">
-              <h3>Physics-Informed Embed-to-Control and Observe with Per-Producer MLP Heads for CO2 Storage Surrogate Modelling</h3>
-              <a class="pubcard__doi mono" href="#" data-placeholder="doi-multiphase">UNDER REVIEW</a>
+              <h3>Physics-informed multi-task neural network for simultaneous leak detection, diameter estimation, and localization in multiphase pipelines</h3>
+              <a class="pubcard__doi mono" href="https://doi.org/10.1016/j.psep.2026.109609" data-placeholder="doi-PIMNN">DOI ↗</a>
             </div>
           </div>
-        </article> -->
+        </article>
 
-        <article class="pubcard">
+        <article class="pubcard" data-type="Journal Articles" data-year="2026" data-area="Multimodal AI" data-status="Not specified">
           <div class="pubcard__frame">
             <div class="pubcard__figure">
               <img src="assets/images/research/reliefnet.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
@@ -371,7 +296,7 @@
           </div>
         </article>
 
-        <article class="pubcard">
+        <article class="pubcard" data-type="Journal Articles" data-year="2026" data-area="Physics-informed learning" data-status="Not specified">
           <div class="pubcard__frame">
             <div class="pubcard__figure">
               <img src="assets/images/research/Multiphase.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
@@ -386,7 +311,7 @@
           </div>
         </article>
 
-        <article class="pubcard">
+        <article class="pubcard" data-type="Journal Articles" data-year="2026" data-area="Multimodal AI" data-status="Not specified">
           <div class="pubcard__frame">
             <div class="pubcard__figure">
               <img src="assets/images/research/RoadSense.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
@@ -401,7 +326,7 @@
           </div>
         </article>
 
-        <article class="pubcard">
+        <article class="pubcard" data-type="Conference Papers" data-year="2025" data-area="Autonomous systems" data-status="Not specified">
           <div class="pubcard__frame">
             <div class="pubcard__figure">
               <img src="assets/images/research/Autonoums_Wheel_Chair.png" alt="ReliefNet methodology figure — replace with actual figure" data-placeholder="research-fig-1">
@@ -415,10 +340,59 @@
             </div>
           </div>
         </article>
+
+        <article class="pubcard" data-type="TDRs" data-year="2026" data-area="Autonomous systems" data-status="Not specified">
+          <div class="pubcard__frame">
+            <div class="pubcard__figure">
+              <img src="assets/images/research/RoboSub26.png" data-placeholder="research-fig-1">
+            </div>
+          </div>
+          <div class="pubcard__body">
+            <p class="pubcard__journal mono">RoboSub 2026 · RoboNation</p>
+            <div class="pubcard__content">
+              <h3>Team BengalSub’s Autonomous Underwater Vehicle: Hangor 2.0</h3>
+              <a class="pubcard__doi mono" href="https://robonation.org/app/uploads/sites/4/2026/07/RS26_TDR_TechAutocrats.pdf">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pubcard" data-type="TDRs" data-year="2026" data-area="Autonomous systems" data-status="Not specified">
+          <div class="pubcard__frame">
+            <div class="pubcard__figure">
+              <img src="assets/images/research/RoboSub25.png" data-placeholder="research-fig-1">
+            </div>
+          </div>
+          <div class="pubcard__body">
+            <p class="pubcard__journal mono">RoboSub 2025 · RoboNation</p>
+            <div class="pubcard__content">
+              <h3>Technical Design Report of Hangor 1.0, An Autonomous Underwater Vehicle</h3>
+              <a class="pubcard__doi mono" href="https://www.researchgate.net/profile/Khondokar-Radwanur-Rahman/publication/400783043_Technical_Design_Report_of_Hangor_10_An_Autonomous_Underwater_Vehicle/links/6990159564ca8a38208cea12/Technical-Design-Report-of-Hangor-10-An-Autonomous-Underwater-Vehicle.pdf">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pubcard" data-type="TDRs" data-year="2026" data-area="Autonomous systems" data-status="Not specified">
+          <div class="pubcard__frame">
+            <div class="pubcard__figure">
+              <img src="assets/images/research/RoboBoat26.png" data-placeholder="research-fig-1">
+            </div>
+          </div>
+          <div class="pubcard__body">
+            <p class="pubcard__journal mono">RoboBoat 2026 · RoboNation</p>
+            <div class="pubcard__content">
+              <h3>RoboBoat 2026: Technical Design Report of BijoyTori 1.0, An Autonomous Surface Vehicle</h3>
+              <a class="pubcard__doi mono" href="https://robonation.org/app/uploads/sites/3/2026/02/TDR_TechAutocrats_RB2026-1.pdf">DOI ↗</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
 
-    <p class="publication-more">For more, visit <a href="https://scholar.google.com/citations?user=89kgko4AAAAJ&amp;hl=en">Scholar Profile <span aria-hidden="true">↗</span></a></p>
+    <div class="publication-empty" id="publicationEmpty" hidden>
+      <h3>No matching publications</h3>
+      <p>Try a broader search or reset your filters.</p>
+      <button type="button" data-reset-publications>Reset filters</button>
+    </div>
   </section>
 
   <!-- ============ PROJECTS ============ -->
@@ -495,25 +469,6 @@
         </div>
       </article>
     </div>
-  </section>
-
-  <!-- ============ FEATURED WRITING ============ -->
-  <section class="panel" id="writing">
-    <header class="panel__head">
-      <h2 class="panel__title">Featured Writing</h2>
-      <span class="panel__rule" aria-hidden="true"></span>
-    </header>
-
-    <ul class="writelist">
-      <li class="writelist__row">
-        <span class="writelist__title">Confusing LLMs with Adversarial Inputs</span>
-        <a href="https://medium.com/@optimisticfellow3652/confusing-llms-with-adversarial-inputs-4a2269f5e20b?sharedUserId=optimisticfellow3652" class="writelist__link mono" data-placeholder="writing-1">Read ↗</a>
-      </li>
-      <li class="writelist__row">
-        <span class="writelist__title">An Overview of BengalSub Autonomous System</span>
-        <a href="https://medium.com/@optimisticfellow3652/bengalsub-autonomous-system-c316e19dd994?sharedUserId=optimisticfellow3652" class="writelist__link mono" data-placeholder="writing-2">Read ↗</a>
-      </li>
-    </ul>
   </section>
 
   <!-- ============ Public Relations & Media ============ -->
@@ -667,6 +622,14 @@
         <span class="reclist__year">2023</span>
       </div>
       <p>Our team Best_Trio secured 3rd place among 100+ teams nationwide.</p>
+    </li>
+
+    <li class="reclist__item">
+      <div class="reclist__row">
+      <h3>General Scholarship</h3>
+        <span class="reclist__year">2017</span>
+      </div>
+      <p>Got scholarship in the 2017 Secondary School Certificate board exam.</p>
     </li>
   </ul>
   </section>
