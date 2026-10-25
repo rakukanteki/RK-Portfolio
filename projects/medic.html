@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medic | Khondokar Radwanur Rahman</title>
+<meta name="description" content="Medical Assistant Chatbot using a full-stack RAG (Retrieval-Augmented Generation) pipeline! This project combines powerful tools like LangChain, Pinecone, Google Embeddings, and Groq’s LLaMA 3 to create an intelligent, domain-specific chatbot that answers medical queries using real PDF documents.">
+
+<script>
+  (() => {
+    const saved = localStorage.getItem('portfolio-theme');
+    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = saved || preferred;
+  })();
+</script>
+
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body id="top">
+<header class="siterail">
+  <div class="siterail__id">
+    <a class="siterail__brand" href="../index.html#top" aria-label="Back to introduction">
+      <span class="siterail__brandtext">Radwan Khondokar</span>
+    </a>
+  </div>
+  <nav class="siterail__nav" aria-label="Section navigation">
+    <a href="../index.html#education" data-navlink data-index="01" data-label="Education">Education</a>
+    <a href="../index.html#experience" data-navlink data-index="02" data-label="Experience">Experience</a>
+    <a href="../index.html#research" data-navlink data-index="03" data-label="Research">Research</a>
+    <a href="../index.html#projects" data-navlink data-index="06" data-label="Projects">Projects</a>
+    <a href="../index.html#media" data-navlink data-index="05" data-label="Media Outreach">Media</a>
+    <a href="../index.html#recognitions" data-navlink data-index="08" data-label="Recognitions">Recognitions</a>
+    <a href="../index.html#contact" data-navlink data-index="09" data-label="Contact">Contact</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+    <span class="theme-toggle__sun" aria-hidden="true">☼</span>
+    <span class="theme-toggle__moon" aria-hidden="true">☾</span>
+  </button>
+  <button class="siterail__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<main class="project-detail">
+<a class="project-back" href="../index.html#projects">← All projects</a>
+<article>
+<header class="project-detail__header"><p class="eyebrow">Project 06</p><h1>Medic</h1><p>Medical Assistant Chatbot using a full-stack RAG (Retrieval-Augmented Generation) pipeline! This project combines powerful tools like LangChain, Pinecone, Google Embeddings, and Groq’s LLaMA 3 to create an intelligent, domain-specific chatbot that answers medical queries using real PDF documents.</p><a class="button button--secondary" href="https://github.com/rakukanteki/Medical-AI-Assistant.git" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></header>
+<figure class="project-detail__figure"><img src="../assets/images/projects/chatbot.png" alt="Medic" fetchpriority="high"><figcaption>Medic — project overview.</figcaption></figure>
+<section class="project-detail__section"><h2>Document-based retrieval</h2><p>The RAG pipeline uses PDF documents with LangChain, Pinecone, and Google Embeddings to retrieve relevant context.</p></section><section class="project-detail__section"><h2>Answer generation</h2><p>Groq’s LLaMA 3 uses the retrieved context to generate responses to medical queries.</p></section>
+
+</article>
+<nav class="project-detail__nav" aria-label="Project navigation"><a href="../index.html#projects">← All projects</a><a href="hangor-1.html">Next project →</a></nav>
+</main>
+<button class="backtotop" id="backToTop" aria-label="Back to top">↑</button>
+<script src="../js/main.js"></script>
+</body></html>

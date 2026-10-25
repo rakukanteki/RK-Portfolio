@@ -57,8 +57,17 @@ Projects · Education · Recognitions · Contact (footer)
   while the overview describes the broader portfolio. The referenced TSX content
   modules are not included. All cards remain readable when JavaScript is disabled.
 
-- Fonts are loaded from Google Fonts via `<link>` tags in `index.html`
-  (Space Grotesk, IBM Plex Sans, IBM Plex Mono) — an internet connection is
-  needed the first time a visitor loads the page.
+- Fonts use the device’s default system font; no external font downloads are needed.
 - The design respects `prefers-reduced-motion` and is responsive from mobile
   up; the nav collapses into a toggle menu under ~960px wide.
+
+## Project detail pages
+
+Each featured project links to its own static HTML page in `projects/`.
+Click the card to open its overview, project image, and technical descriptions;
+the GitHub link remains a separate destination. Hangor 2.0 includes an additional
+interior photograph. All pages share `css/styles.css` and `js/main.js`, including
+the theme toggle and mobile navigation, and work without a build step.
+
+Edit project descriptions and image captions directly in the corresponding HTML
+file. Keep the short homepage summary in `index.html` updated separately.
