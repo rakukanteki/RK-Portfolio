@@ -57,7 +57,7 @@ Projects · Education · Recognitions · Contact (footer)
   while the overview describes the broader portfolio. The referenced TSX content
   modules are not included. All cards remain readable when JavaScript is disabled.
 
-- Fonts use the device’s default system font; no external font downloads are needed.
+- Typography pairs Source Serif 4 headlines with Source Sans 3 body text via Google Fonts, with local fallbacks. The responsive scale is adapted from Stanford’s typography guidance for this compact portfolio.
 - The design respects `prefers-reduced-motion` and is responsive from mobile
   up; the nav collapses into a toggle menu under ~960px wide.
 

@@ -42,8 +42,25 @@ themeToggle.addEventListener('click', () => {
 const sections = document.querySelectorAll('main section[id], footer[id]');
 const navByHash = {};
 document.querySelectorAll('[data-navlink]').forEach(a => {
-  navByHash[a.getAttribute('href')] = a;
+  const hash = new URL(a.href, window.location.href).hash;
+  navByHash[hash] = a;
+  a.addEventListener('click', () => setActiveNav(hash));
 });
+
+const setActiveNav = (hash) => {
+  Object.entries(navByHash).forEach(([target, link]) => {
+    const active = target === hash;
+    link.classList.toggle('is-active', active);
+    if (active) link.setAttribute('aria-current', document.querySelector('.project-detail') ? 'page' : 'location');
+    else link.removeAttribute('aria-current');
+  });
+};
+
+if (document.querySelector('.project-detail')) {
+  setActiveNav('#projects');
+} else {
+  setActiveNav(window.location.hash);
+}
 
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -51,8 +68,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
     const link = navByHash[hash];
     if (!link) return;
     if (entry.isIntersecting) {
-      Object.values(navByHash).forEach(l => l.classList.remove('is-active'));
-      link.classList.add('is-active');
+      setActiveNav(hash);
     }
   });
 }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
