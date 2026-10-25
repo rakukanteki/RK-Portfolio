@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BijoyTori1.0 ASV | Khondokar Radwanur Rahman</title>
-<meta name="description" content="Architected a ROS2 Jazzy autonomy pipeline on Raspberry Pi, integrating RGB-D perception, LiDAR obstacle detection, EKF sensor fusion, and autonomous navigation, validated in Gazebo before hardware deployment.">
+<meta name="description" content="BijoyTori 1.0: Team BengalBoat’s RoboBoat 2026 autonomous surface vehicle, integrating ROS 2, RGB-D and LiDAR perception, EKF state estimation, mission planning, and Gazebo validation.">
 
 <script>
   (() => {
@@ -46,10 +46,70 @@
 <main class="project-detail">
 <a class="project-back" href="../index.html#projects">← All projects</a>
 <article>
-<header class="project-detail__header"><p class="eyebrow">Project 03</p><h1>BijoyTori1.0 ASV</h1><p>Architected a ROS2 Jazzy autonomy pipeline on Raspberry Pi, integrating RGB-D perception, LiDAR obstacle detection, EKF sensor fusion, and autonomous navigation, validated in Gazebo before hardware deployment.</p><a class="button button--secondary" href="https://github.com/Nezent/bijoy_tori.git" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></header>
-<figure class="project-detail__figure"><img src="../assets/images/projects/bijoytoriv1.jpg" alt="BijoyTori1.0 ASV" fetchpriority="high"><figcaption>BijoyTori1.0 ASV — project overview.</figcaption></figure>
-<section class="project-detail__section"><h2>Perception and localization</h2><p>The ROS2 Jazzy pipeline runs on Raspberry Pi and integrates RGB-D perception, LiDAR obstacle detection, and EKF sensor fusion.</p></section><section class="project-detail__section"><h2>Navigation and validation</h2><p>Autonomous navigation was validated in Gazebo before deployment to the vessel.</p></section>
+<header class="project-detail__header">
+  <p class="eyebrow">Project 03 · RoboBoat 2026</p>
+  <h1>BijoyTori1.0 ASV</h1>
+  <p>BijoyTori 1.0 is an autonomous surface vehicle developed by Team BengalBoat of Tech Autocrats for RoboBoat 2026. Its modular ROS 2 autonomy stack connects RGB-D perception, LiDAR sensing, state estimation, mission planning, and thruster control to navigate buoy channels and avoid obstacles on the water.</p>
+  <a class="button button--secondary" href="https://github.com/Nezent/bijoy_tori.git" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>
+</header>
+<figure class="project-detail__figure">
+  <img src="../assets/images/projects/bijoytoriv1.jpg" alt="BijoyTori 1.0 autonomous surface vehicle" fetchpriority="high">
+  <figcaption>BijoyTori 1.0, Team BengalBoat’s autonomous surface platform for RoboBoat 2026.</figcaption>
+</figure>
 
+<section class="project-detail__section" aria-labelledby="bijoytori-overview">
+  <h2 id="bijoytori-overview">Overview and contribution</h2>
+  <p>The project brings perception, navigation, and marine hardware together in a dual-hull robotic platform. Development prioritizes repeatable behavior in three core missions: Navigation Channel, Avoid the Crowds, and Snack Run. These tasks exercise gate detection, obstacle avoidance, path following, and coordinated control before the team expands to more complex interactions.</p>
+  <p>My contribution focuses on the ROS 2 autonomy pipeline: integrating RGB-D perception, LiDAR obstacle sensing, EKF-based state estimation, and autonomous navigation, with Gazebo validation before hardware deployment. The technical design report also credits my role as a mentor, supporting the team through design feedback and hands-on guidance.</p>
+</section>
+
+<section class="project-detail__section project-detail__feature" aria-labelledby="bijoytori-architecture">
+  <div class="project-detail__copy">
+    <h2 id="bijoytori-architecture">Modular ROS 2 architecture</h2>
+    <p>The software follows a five-layer pipeline: perception, fusion and state estimation, planning and decision-making, motion control, and actuation. A Raspberry Pi 5 runs high-level autonomy, while an Arduino handles low-level PWM commands for the propulsion system. Separating these responsibilities allows sensing, mission logic, and motor control to be developed and inspected independently.</p>
+    <p>ROS 2 messages carry detections, range scans, point clouds, odometry, and velocity commands between modules. A consistent transform tree connects the map, odometry, vehicle, and sensor frames, allowing observations from different sensors to be interpreted in a shared spatial reference.</p>
+  </div>
+  <figure class="project-detail__figure project-detail__figure--technical">
+    <a href="../assets/images/projects/bijoytori/software-architecture.png" target="_blank" rel="noopener noreferrer"><img src="../assets/images/projects/bijoytori/software-architecture.png" alt="BijoyTori architecture linking perception and sensor fusion to planning, control, and actuation" loading="lazy"></a>
+    <figcaption>Five-layer software architecture, reproduced from Figure 10 of the technical design report.</figcaption>
+  </figure>
+</section>
+
+<section class="project-detail__section project-detail__feature project-detail__feature--reverse" aria-labelledby="bijoytori-perception">
+  <div class="project-detail__copy">
+    <h2 id="bijoytori-perception">Buoy detection and sensor fusion</h2>
+    <p>An Intel RealSense D455 supplies RGB imagery and depth measurements, while an RPLIDAR A2M12 provides 360-degree planar ranging. YOLOv8 detects mission objects such as buoys and gate markers. Depth checks help reject invalid detections, and LiDAR clustering supplies spatial candidates for association with visual classifications.</p>
+    <p>For channel navigation, red and green markers are paired to identify a gate and estimate its midpoint in the vehicle frame. The report also documents an OpenCV pipeline using HSV color masks, morphological filtering, and contour centroids for channel-marker detection. An Extended Kalman Filter combines inertial, GNSS, and odometry inputs to estimate vehicle pose and velocity for navigation.</p>
+  </div>
+  <figure class="project-detail__figure project-detail__figure--technical">
+    <a href="../assets/images/projects/bijoytori/buoy-detection.png" target="_blank" rel="noopener noreferrer"><img src="../assets/images/projects/bijoytori/buoy-detection.png" alt="Vision detections identifying green and red navigation markers on the water" loading="lazy"></a>
+    <figcaption>Navigation-marker detection example from Figure 1 of the technical design report.</figcaption>
+  </figure>
+</section>
+
+<section class="project-detail__section" aria-labelledby="bijoytori-missions">
+  <h2 id="bijoytori-missions">Mission planning and motion control</h2>
+  <p>A Behavior Tree executive sequences tasks and mission transitions. Global waypoint planning and local obstacle avoidance translate the world model into velocity commands, while PID guidance and thrust allocation turn those commands into propulsion demands. Safety monitoring adds geofencing and collision checks to the planning pipeline.</p>
+  <p>Navigation Channel and Avoid the Crowds use fused gate positions to select a passage while maintaining clearance from obstacle buoys. Snack Run adds mark-buoy tracking and a curvature-constrained turn before returning through the entry gate. Docking, Skeeball, and Water Blast are described as secondary or conditional development objectives in the report.</p>
+</section>
+
+<section class="project-detail__section project-detail__feature" aria-labelledby="bijoytori-simulation">
+  <div class="project-detail__copy">
+    <h2 id="bijoytori-simulation">Simulation and integration testing</h2>
+    <p>Gazebo provides a virtual environment for checking perception, navigation, and control before on-water deployment. Simulated camera and LiDAR streams feed the ROS 2 pipeline, while RViz exposes the vehicle model, coordinate frames, sensor observations, occupancy maps, and planned paths. The report illustrates grid-based A* planning with obstacle inflation around course hazards.</p>
+    <p>Validation combines unit checks for processing functions, integration checks for sensor-to-detection alignment, and joystick teleoperation to inspect control response. RQt Graph, RViz, and topic-rate monitoring help diagnose communication and timing issues. Launch configuration changes switch the pipeline from simulated sensors to physical drivers while preserving the interfaces used by downstream autonomy modules.</p>
+  </div>
+  <figure class="project-detail__figure project-detail__figure--technical">
+    <a href="../assets/images/projects/bijoytori/rviz-model.png" target="_blank" rel="noopener noreferrer"><img src="../assets/images/projects/bijoytori/rviz-model.png" alt="BijoyTori model in RViz showing sensor frames and four thruster positions" loading="lazy"></a>
+    <figcaption>Vehicle model and coordinate frames from the simulation workflow in Figure 22 of the report.</figcaption>
+  </figure>
+</section>
+
+<section class="project-detail__section" aria-labelledby="bijoytori-hardware">
+  <h2 id="bijoytori-hardware">Marine platform, power, and safety</h2>
+  <p>The catamaran platform uses resin-sealed, fiberglass-reinforced 3D-printed hulls, an aluminum extrusion frame, and an acrylic deck. Adjustable camera mounts support sensor alignment, and modular brackets simplify maintenance. Four Blue Robotics T200 thrusters mounted at 45-degree angles provide thrust for forward, lateral, and rotational maneuvers.</p>
+  <p>A custom 5S3P lithium-ion battery pack, rated at 18.5 V and 15,000 mAh, supplies the propulsion bus. Regulated 5 V power serves computing, sensors, and communications. A physical kill switch and an Arduino-controlled relay provide manual shutdown and electronic propulsion cutoff, complementing software safety monitoring.</p>
+</section>
 </article>
 <nav class="project-detail__nav" aria-label="Project navigation"><a href="../index.html#projects">← All projects</a><a href="tracer.html">Next project →</a></nav>
 </main>
