@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hangor2.0 AUV | Khondokar Radwanur Rahman</title>
-<meta name="description" content="Architecting an embedded AI autonomy stack with YOLOv11, Depth Anything V2, Behavior Trees, TensorRT, and sensor fusion for real-time underwater navigation in Jetson Orin Nano.">
+<title>Hangor 2.0 AUV | Khondokar Radwanur Rahman</title>
+<meta name="description" content="Hangor 2.0: BengalSub’s RoboSub 2026 vehicle with modular ROS2 autonomy, YOLOv11 perception, FLANN matching, sensor fusion, and Gazebo simulation.">
 
 <script>
   (() => {
@@ -46,10 +46,79 @@
 <main class="project-detail">
 <a class="project-back" href="../index.html#projects">← All projects</a>
 <article>
-<header class="project-detail__header"><p class="eyebrow">Project 02</p><h1>Hangor2.0 AUV</h1><p>Architecting an embedded AI autonomy stack with YOLOv11, Depth Anything V2, Behavior Trees, TensorRT, and sensor fusion for real-time underwater navigation in Jetson Orin Nano.</p><a class="button button--secondary" href="https://github.com/Nezent/BengalSub.git" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></header>
-<figure class="project-detail__figure"><img src="../assets/images/projects/hangorv2.jpeg" alt="Hangor2.0 AUV" fetchpriority="high"><figcaption>Hangor2.0 AUV — project overview.</figcaption></figure>
-<section class="project-detail__section"><h2>Embedded perception</h2><p>The autonomy stack combines YOLOv11 and Depth Anything V2 for underwater perception on Jetson Orin Nano.</p></section><section class="project-detail__section"><h2>Mission execution</h2><p>Behavior Trees, TensorRT inference optimization, and sensor fusion support real-time underwater navigation.</p></section>
-<figure class="project-detail__figure"><img src="../assets/images/projects/hangorv2_inside.jpeg" alt="Interior hardware of Hangor 2.0" loading="lazy"><figcaption>Inside Hangor 2.0: the vehicle’s internal hardware.</figcaption></figure>
+  <header class="project-detail__header">
+    <p class="eyebrow">BengalSub · RoboSub 2026</p>
+    <h1>Hangor 2.0 AUV</h1>
+    <p>Hangor 2.0 is BengalSub’s reliability-focused autonomous underwater vehicle for RoboSub 2026. Building on the first platform, it combines a compact, unified aluminum enclosure with centralized electronics and modular ROS2 autonomy. The development strategy prioritizes reusable perception, navigation, and control capabilities to reduce integration complexity and make more time for testing.</p>
+    <a class="button button--secondary" href="https://github.com/Nezent/BengalSub.git" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>
+  </header>
+  <figure class="project-detail__figure"><img src="../assets/images/projects/hangorv2.jpeg" alt="BengalSub’s Hangor 2.0 autonomous underwater vehicle" fetchpriority="high"><figcaption>Hangor 2.0, developed for RoboSub 2026.</figcaption></figure>
+<section class="project-detail__section project-detail__feature" aria-labelledby="hangor2-software">
+    <div class="project-detail__copy"><h2 id="hangor2-software">Modular ROS2 software</h2>
+    <p>The software stack runs ROS2 Humble on the Jetson Orin Nano and ROS2 Jazzy on the Raspberry Pi 5. The Jetson handles perception and high-level mission functions, while the Raspberry Pi supports state estimation and control. Eclipse Cyclone DDS connects the two systems; communication tuning and topic-rate optimization addressed instability under heavy telemetry traffic.</p><p>Perception, localization, control, mission planning, and telemetry are organized as reusable modules. This separation makes subsystem testing and debugging easier while allowing the same autonomous capabilities to support multiple competition tasks.</p></div>
+    <figure class="project-detail__figure project-detail__figure--technical">
+      <a href="../assets/hangor-2/software-overview.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Overview of perception, mission planning, localization, control, and telemetry modules">
+        <img src="../assets/hangor-2/software-overview.png" width="672" height="394" alt="Overview of perception, mission planning, localization, control, and telemetry modules" loading="lazy">
+      </a>
+      <figcaption>Software system design.</figcaption>
+    </figure>
+  </section><section class="project-detail__section project-detail__feature project-detail__feature--reverse" aria-labelledby="hangor2-perception">
+    <div class="project-detail__copy"><h2 id="hangor2-perception">Underwater object detection</h2>
+    <p>YOLOv11 detects gates, markers, slalom poles, and deployment targets. Forward-facing and downward-facing camera views support approaching targets and aligning payload actions. Stereo RGB vision contributes depth information and spatial awareness.</p><p>The testing record describes reduced detection accuracy in low light and subsequent dataset augmentation to improve robustness. The accompanying frames show the detector’s labeled outputs on slalom poles and a torpedo target in the pool.</p></div>
+    <div class="project-detail__visuals"><figure class="project-detail__figure project-detail__figure--technical">
+      <a href="../assets/hangor-2/slalom-detection.png" target="_blank" rel="noopener" aria-label="Open full-size figure: YOLOv11 bounding boxes identifying red and white slalom poles underwater">
+        <img src="../assets/hangor-2/slalom-detection.png" width="760" height="570" alt="YOLOv11 bounding boxes identifying red and white slalom poles underwater" loading="lazy">
+      </a>
+      <figcaption>Slalom-pole detections from the pool-testing examples.</figcaption>
+    </figure><figure class="project-detail__figure project-detail__figure--technical">
+      <a href="../assets/hangor-2/torpedo-detection.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Underwater torpedo target board identified by a detection bounding box">
+        <img src="../assets/hangor-2/torpedo-detection.png" width="821" height="616" alt="Underwater torpedo target board identified by a detection bounding box" loading="lazy">
+      </a>
+      <figcaption>Torpedo-board detection.</figcaption>
+    </figure></div>
+  </section><section class="project-detail__section project-detail__feature" aria-labelledby="hangor2-pose">
+    <div class="project-detail__copy"><h2 id="hangor2-pose">Target pose and vehicle localization</h2>
+    <p>FLANN-based feature matching supports target-board localization during precision tasks such as torpedo deployment. Matching visual features helps the vehicle estimate the target pose before closed-loop alignment and payload release.</p><p>For vehicle state estimation, an Extended Kalman Filter combines the VectorNav IMU and Bar30 depth sensor. The report describes physics-informed motion constraints and disturbance filtering to improve consistency. Re-tuned PID gains and thruster allocation account for the updated vehicle’s mass distribution and inertia.</p></div>
+    <figure class="project-detail__figure project-detail__figure--technical">
+      <a href="../assets/hangor-2/flann-matching.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Feature correspondences between target images used for FLANN-based pose estimation">
+        <img src="../assets/hangor-2/flann-matching.png" width="543" height="224" alt="Feature correspondences between target images used for FLANN-based pose estimation" loading="lazy">
+      </a>
+      <figcaption>FLANN feature matching for pose estimation.</figcaption>
+    </figure>
+  </section><section class="project-detail__section project-detail__feature project-detail__feature--reverse" aria-labelledby="hangor2-simulation">
+    <div class="project-detail__copy"><h2 id="hangor2-simulation">Simulation before deployment</h2>
+    <p>Gazebo Harmonic provides a repeatable environment for testing sensor integration, localization, motion control, and mission autonomy before underwater deployment. The simulation scenes reproduce the vehicle and task structures so the team can inspect navigation behavior and debug interactions across the software stack.</p><p>The validation process progressed from individual modules to subsystem integration and pool trials. The report records corrections to timestamp alignment, EKF tuning during aggressive turns, navigation overshoot, and interrupted-mission recovery logic.</p></div>
+    <figure class="project-detail__figure project-detail__figure--technical">
+      <a href="../assets/hangor-2/gazebo-simulation.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Hangor 2.0 simulated above an underwater task structure in Gazebo">
+        <img src="../assets/hangor-2/gazebo-simulation.png" width="765" height="430" alt="Hangor 2.0 simulated above an underwater task structure in Gazebo" loading="lazy">
+      </a>
+      <figcaption>Gazebo simulation result.</figcaption>
+    </figure>
+  </section><section class="project-detail__section" aria-labelledby="hangor2-planning">
+    <h2 id="hangor2-planning">Mission planning and recovery</h2>
+    <p>A BehaviorTree.CPP mission planner uses condition and action nodes to coordinate navigation, hovering, payload deployment, and recovery. Conditions monitor battery health, localization, obstacle clearance, and depth limits. ROS2 actions and services, together with XML mission configuration, support modular execution.</p>
+    <p>The competition strategy selects a focused mission set: gate traversal, Coin Flip, slalom, torpedo deployment, bins, and return to the stored gate location. These are the objectives described in the design report. Watchdogs and recovery behaviors support fault handling, while the hardware kill system disables thrusters without removing power from computing and sensing.</p>
+  </section>
+<figure class="project-detail__figure project-detail__figure--technical">
+      <a href="../assets/hangor-2/software-architecture.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Detailed software architecture linking Jetson perception, Raspberry Pi state estimation, PID control, and eight thrusters">
+        <img src="../assets/hangor-2/software-architecture.png" width="1876" height="1070" alt="Detailed software architecture linking Jetson perception, Raspberry Pi state estimation, PID control, and eight thrusters" loading="lazy">
+      </a>
+      <figcaption>End-to-end software architecture.</figcaption>
+    </figure><section class="project-detail__section" aria-labelledby="hangor2-results">
+    <h2 id="hangor2-results">Reported validation results</h2>
+    <p>Appendix C reports the following software and autonomy measurements from the team’s deployment and pool-validation work. They describe the reported test conditions rather than guaranteed performance in every underwater environment.</p>
+    <ul>
+      <li><strong>YOLOv11 inference:</strong> 28–32 FPS on Jetson Orin Nano, with 48–72 ms camera-to-detection latency.</li>
+      <li><strong>Localization and control:</strong> 50 Hz EKF updates and 100 Hz PID updates; reported pool-trajectory localization error of ±7.2 cm.</li>
+      <li><strong>Mission execution:</strong> 20 Hz Behavior Tree tick rate and an 84% autonomous mission success rate across repeated pool trials.</li>
+      <li><strong>Recovery:</strong> response time below 0.9 seconds during simulated node failure.</li>
+    </ul>
+  </section>
+  <section class="project-detail__section" aria-labelledby="hangor2-hardware">
+    <h2 id="hangor2-hardware">A platform built for reliability</h2>
+    <p>A unified pressure-sealed aluminum enclosure consolidates the electronics and reduces sealing interfaces. The centralized power-distribution system uses star grounding, protected ESC branches, bulk capacitance, and transient suppression to reduce electrical interference. Vacuum checks, submersion tests, buoyancy balancing, and pool trials complemented software validation.</p>
+  </section>
+  <figure class="project-detail__figure"><img src="../assets/images/projects/hangorv2_inside.jpeg" alt="Internal hardware and wiring inside Hangor 2.0" loading="lazy"><figcaption>Inside Hangor 2.0: integrated electronics and hardware.</figcaption></figure>
 </article>
 <nav class="project-detail__nav" aria-label="Project navigation"><a href="../index.html#projects">← All projects</a><a href="bijoytori.html">Next project →</a></nav>
 </main>

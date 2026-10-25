@@ -100,13 +100,12 @@ main, .sitefoot { width: min(calc(100% - 48px), var(--maxw)); margin: 0 auto; }
 .hero__portrait-wrap {
   position: relative;
   margin: 0;
-  aspect-ratio: 1;
 }
 
 .hero__portrait {
   width: 80%;
-  aspect-ratio: 1;
-  border-radius: 50%;
+  aspect-ratio: 4 / 5;
+  border-radius: 0;
   object-fit: cover;
   object-position: center 25%;
   filter: saturate(.78) contrast(1.02);
@@ -235,7 +234,7 @@ main, .sitefoot { width: min(calc(100% - 48px), var(--maxw)); margin: 0 auto; }
 /* Contact footer */
 .sitefoot { width: 100%; max-width: none; margin-top: 22px; color: #e9edf2; background: #780606; }
 .sitefoot__inner, .sitefoot__base { width: min(calc(100% - 48px), var(--maxw)); margin: 0 auto; }
-.sitefoot__inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .8fr); gap: 90px; padding: 80px 0 70px; }
+.sitefoot__inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .8fr); gap: 90px; padding: 64px 0 56px; }
 .sitefoot__eyebrow { margin-bottom: 14px; color: #f1c38a; font-family: var(--meta); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .sitefoot__intro h2 { margin-bottom: 22px; color: white; font-size: clamp(24px, 3vw, 34px); font-weight: 500; line-height: 1.1; }
 .sitefoot__intro > p:last-child { max-width: 640px; color: #f5eded; }
@@ -289,7 +288,7 @@ main, .sitefoot { width: min(calc(100% - 48px), var(--maxw)); margin: 0 auto; }
   .media-card__content h3 { font-size: 14px; }
   .writelist__row { align-items: flex-start; }
   .sitefoot__inner, .sitefoot__base { width: calc(100% - 32px); }
-  .sitefoot__inner { padding: 60px 0 50px; }
+  .sitefoot__inner { padding: 48px 0 40px; }
   .sitefoot__base { flex-direction: column; gap: 8px; }
 }
 
@@ -842,3 +841,39 @@ h1, h2, h3, h4 { text-wrap: pretty; }
   :root { --type-body: 16px; }
   .hero__intro { gap: 32px; }
 }
+
+/* Original technical-report figures: preserve proportions and small-source clarity. */
+.project-detail__figure--technical { margin-top: 24px; }
+.project-detail__figure--technical a { display: block; padding: 20px; background: white; border: 1px solid var(--rule); border-radius: 8px; }
+.project-detail__figure--technical img { width: auto; max-width: 100%; height: auto; max-height: none; margin-inline: auto; background: white; border: 0; border-radius: 0; }
+.project-detail__source { max-width: 70ch; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--muted); font-size: var(--type-small); line-height: 1.6; }
+
+/* Alternating illustrated sections on the Hangor 1.0 page. */
+.project-detail__feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-areas: "copy figure";
+  align-items: center;
+  gap: 32px;
+  max-width: none;
+  margin-block: 40px;
+}
+.project-detail__feature--reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  grid-template-areas: "figure copy";
+}
+.project-detail__copy { grid-area: copy; min-width: 0; }
+.project-detail__copy p:last-child { margin-bottom: 0; }
+.project-detail__feature > figure { grid-area: figure; min-width: 0; margin: 0; }
+@media (max-width: 760px) {
+  .project-detail__feature, .project-detail__feature--reverse {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "figure";
+    gap: 20px;
+    margin-block: 32px;
+  }
+}
+
+/* Multiple related figures share the image side of an alternating section. */
+.project-detail__visuals { grid-area: figure; display: grid; gap: 24px; min-width: 0; }
+.project-detail__visuals > figure { margin: 0; }

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hangor1.0 AUV | Khondokar Radwanur Rahman</title>
-<meta name="description" content="Hangor integrates YOLOv8 perception, acoustic localization, ROS-based autonomy, and Behavior Tree mission planning on Jetson Orin Nano for robust autonomous underwater operations.">
+<title>Hangor 1.0 AUV | Khondokar Radwanur Rahman</title>
+<meta name="description" content="Explore BengalSub’s Hangor 1.0 AUV: mechanical design, electrical architecture, YOLOv8 perception, and ROS-based autonomy for RoboSub 2025.">
 
 <script>
   (() => {
@@ -46,10 +46,71 @@
 <main class="project-detail">
 <a class="project-back" href="../index.html#projects">← All projects</a>
 <article>
-<header class="project-detail__header"><p class="eyebrow">Project 01</p><h1>Hangor1.0 AUV</h1><p>Hangor integrates YOLOv8 perception, acoustic localization, ROS-based autonomy, and Behavior Tree mission planning on Jetson Orin Nano for robust autonomous underwater operations.</p><a class="button button--secondary" href="https://github.com/rakukanteki/RoboSub25.git" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></header>
-<figure class="project-detail__figure"><img src="../assets/images/projects/hangorv1.png" alt="Hangor1.0 AUV" fetchpriority="high"><figcaption>Hangor1.0 AUV — project overview.</figcaption></figure>
-<section class="project-detail__section"><h2>Perception and localization</h2><p>YOLOv8 perception and acoustic localization support underwater operations.</p></section><section class="project-detail__section"><h2>Autonomy and mission planning</h2><p>The ROS-based autonomy stack runs on Jetson Orin Nano and uses Behavior Trees for mission planning.</p></section>
+  <header class="project-detail__header">
+    <p class="eyebrow">BengalSub · RoboSub 2025</p>
+    <h1>Hangor 1.0 AUV</h1>
+    <p>Hangor 1.0 is BengalSub’s modular autonomous underwater vehicle, developed for the team’s debut at RoboSub 2025. Designed and fabricated in Bangladesh, it brings together a marine-grade aluminum frame, custom watertight enclosures, onboard vision, and reactive mission planning in a platform built for underwater robotics tasks.</p>
+    <a class="button button--secondary" href="https://github.com/rakukanteki/RoboSub25.git" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>
+  </header>
 
+  <figure class="project-detail__figure">
+    <img src="../assets/images/projects/hangorv1.png" alt="BengalSub’s Hangor 1.0 autonomous underwater vehicle" fetchpriority="high">
+    <figcaption>Hangor 1.0, BengalSub’s RoboSub 2025 platform.</figcaption>
+  </figure>
+
+  <section class="project-detail__section project-detail__feature" aria-labelledby="hangor-mechanical">
+    <div class="project-detail__copy">
+    <h2 id="hangor-mechanical">Mechanical design</h2>
+    <p>The vehicle uses a CNC-cut, 5 mm aluminum 5083 structure with an open frame that provides access to sensors, payloads, and electronics. Its modular mounting layout supports eight T200 thrusters, a marker dropper, and a dual-tube torpedo launcher. The thruster arrangement provides six-degree-of-freedom maneuverability.</p>
+    <p>SolidWorks modeling guided the placement of thruster mounts, electronics bays, and payload fixtures. Custom sealed enclosures protect computing and power components, while symmetrical component placement, adjustable ballast, and buoyancy foam help the vehicle approach neutral buoyancy and maintain balance during underwater tasks.</p>
+    </div>
+    <figure class="project-detail__figure project-detail__figure--technical">
+      <a href="../assets/hangor-1/mechanical-design.png" target="_blank" rel="noopener" aria-label="Open Hangor 1.0 mechanical design figure">
+        <img src="../assets/hangor-1/mechanical-design.png" width="282" height="191" alt="SolidWorks model of Hangor 1.0 showing the open frame, thrusters, enclosures, and front payload mechanisms" loading="lazy">
+      </a>
+      <figcaption>Mechanical design in SolidWorks. Source: Figure 3, page 3 of the team’s 2025 technical design report.</figcaption>
+    </figure>
+  </section>
+
+  <section class="project-detail__section project-detail__feature project-detail__feature--reverse" aria-labelledby="hangor-electrical">
+    <div class="project-detail__copy">
+    <h2 id="hangor-electrical">Electrical architecture</h2>
+    <p>A Jetson Orin Nano handles perception and mission planning, with a Raspberry Pi supporting communication and auxiliary tasks. A Pixhawk flight controller translates high-level commands into low-level thruster and actuator control. The sensing system combines front and downward-facing cameras, a VectorNav VN200 inertial sensor, a Bar30 depth sensor, and a hydrophone array.</p>
+    <p>The power architecture separates high-current propulsion loads from computing and sensing electronics. Fuses, relays, regulated converters, and voltage/current monitoring protect the distribution paths. A custom power-distribution PCB organizes connections, while an external kill switch provides an emergency cutoff. Temperature and humidity monitoring inside the enclosure supports system-health checks.</p>
+    </div>
+    <figure class="project-detail__figure project-detail__figure--technical">
+      <a href="../assets/hangor-1/power-distribution.png" target="_blank" rel="noopener" aria-label="Open Hangor 1.0 power distribution diagram">
+        <img src="../assets/hangor-1/power-distribution.png" width="426" height="248" alt="Power distribution diagram connecting battery supplies, protection circuits, thruster controllers, regulated computing power, and sensors" loading="lazy">
+      </a>
+      <figcaption>High-level power distribution, including propulsion and low-voltage electronics. Source: Figure 9, page 4 of the report.</figcaption>
+    </figure>
+  </section>
+
+  <section class="project-detail__section project-detail__feature" aria-labelledby="hangor-perception">
+    <div class="project-detail__copy">
+    <h2 id="hangor-perception">Object detection and perception</h2>
+    <p>Hangor’s vision pipeline uses YOLOv8 for object detection, TensorRT for inference acceleration on the Jetson, and OpenCV for image preprocessing. The front-facing camera supports gate and target recognition, while the downward-facing camera supports floor-marker tracking, drop-point recognition, and cleanup-task perception.</p>
+    <p>Detection results are published as ROS topics for navigation and mission logic. The report also describes HSV-based color detection for channel navigation and visual alignment before payload actions. These perception outputs let the mission controller connect detected targets with task-specific movement and actuation.</p>
+    </div>
+    <figure class="project-detail__figure project-detail__figure--technical">
+      <a href="../assets/hangor-1/gate-detection.png" target="_blank" rel="noopener" aria-label="Open the underwater gate detection example">
+        <img src="../assets/hangor-1/gate-detection.png" width="335" height="219" alt="Underwater gate-camera frame used in the report’s YOLOv8 gate-detection example" loading="lazy">
+      </a>
+      <figcaption>YOLOv8 gate-detection example. Source: Figure 12, page 5 of the report.</figcaption>
+    </figure>
+  </section>
+
+  <section class="project-detail__section" aria-labelledby="hangor-autonomy">
+    <h2 id="hangor-autonomy">Autonomy and mission control</h2>
+    <p>The ROS-based software stack uses a Behavior Tree to organize search, alignment, navigation, and actuation into modular tasks. It can retry or skip tasks as conditions change. MAVROS connects high-level motion commands to the Pixhawk, while PID control stabilizes movement and an Extended Kalman Filter combines inertial and depth-related measurements for localization. Acoustic localization uses hydrophone time differences of arrival.</p>
+    <p>The competition strategy prioritizes gate traversal and channel navigation before more complex marker-dropping, tagging, cleanup, and return tasks. These are the mission capabilities described in the design report. A hardware kill switch, software disarming, and watchdog monitoring provide layered recovery and safety mechanisms.</p>
+  </section>
+
+  <section class="project-detail__section" aria-labelledby="hangor-validation">
+    <h2 id="hangor-validation">Testing and development</h2>
+    <p>The report documents structural and fluid-flow simulations, electrical load monitoring, and vision-model training. A ROS-integrated Gazebo and RViz environment supports testing of vehicle dynamics, sensor inputs, control, and mission logic before physical deployment. The development record also includes prototype construction, pool testing, and testing at Cox’s Bazar.</p>
+    <p>Key engineering challenges included balancing weight and buoyancy, sealing custom enclosures, stabilizing power delivery, configuring the inertial sensor, and sustaining real-time detection with the available onboard compute.</p>
+  </section>
 </article>
 <nav class="project-detail__nav" aria-label="Project navigation"><a href="../index.html#projects">← All projects</a><a href="hangor-2.html">Next project →</a></nav>
 </main>
