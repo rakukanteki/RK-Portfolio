@@ -134,6 +134,11 @@ main, .sitefoot { width: min(calc(100% - 48px), var(--maxw)); margin: 0 auto; }
 .explog { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
 .explog__entry { display: grid; grid-template-columns: 150px 1fr; gap: 38px; padding: 0 0 34px; margin-bottom: 34px; border-bottom: 1px solid var(--rule); }
 .explog__entry:last-child { margin: 0; border: 0; }
+.explog__institution { display: block; }
+.explog__institution-title { grid-column: 1 / -1; margin: 0 0 22px; color: var(--blue); font-size: 24px; font-weight: 600; }
+.explog__entry:has(> .explog__institution-title) { row-gap: 0; }
+.explog__institution .explog__entry:last-child { padding-bottom: 0; }
+.explog__body h4 { margin: 0 0 3px; font-family: var(--serif); font-size: 21px; font-weight: 600; }
 .explog__org { margin-bottom: 12px; color: var(--blue); font-size: 12px; font-weight: 600; }
 .explog__body p:not(.explog__org) { max-width: 850px; margin-bottom: 0; color: var(--body); line-height: 1.8; }
 .explog__body p:not(.explog__org), .projcard__desc, .reclist__item p, .sitefoot__intro > p:last-child { text-align: justify; text-justify: inter-word; }
