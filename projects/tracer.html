@@ -11,17 +11,6 @@
   <meta property="og:description" content="Multi-task learning, pressure-signal analysis, physics constraints, and condition-aware flow visualization.">
   <meta property="og:image" content="../assets/images/projects/tracer.png">
 
-  <script>
-    (() => {
-      try {
-        const saved = localStorage.getItem('portfolio-theme');
-        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.dataset.theme = saved === 'dark' || saved === 'light' ? saved : preferred;
-      } catch (_) {
-        document.documentElement.dataset.theme = 'light';
-      }
-    })();
-  </script>
 
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,10 +77,6 @@
     <a href="../index.html#recognitions" data-navlink data-index="08" data-label="Recognitions">Recognitions</a>
     <a href="../index.html#contact" data-navlink data-index="09" data-label="Contact">Contact</a>
   </nav>
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
-    <span class="theme-toggle__sun" aria-hidden="true">☼</span>
-    <span class="theme-toggle__moon" aria-hidden="true">☾</span>
-  </button>
   <button class="siterail__toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>

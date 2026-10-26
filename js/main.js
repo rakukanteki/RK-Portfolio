@@ -17,26 +17,6 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 // ============================================================
-// Light / dark theme
-// ============================================================
-const themeToggle = document.getElementById('themeToggle');
-
-const setTheme = (theme) => {
-  document.documentElement.dataset.theme = theme;
-  const isDark = theme === 'dark';
-  themeToggle.setAttribute('aria-pressed', String(isDark));
-  themeToggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
-};
-
-setTheme(document.documentElement.dataset.theme || 'light');
-
-themeToggle.addEventListener('click', () => {
-  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-  setTheme(nextTheme);
-  localStorage.setItem('portfolio-theme', nextTheme);
-});
-
-// ============================================================
 // Active section highlight in nav
 // ============================================================
 const sections = document.querySelectorAll('main section[id], footer[id]');
