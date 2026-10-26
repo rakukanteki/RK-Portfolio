@@ -621,16 +621,16 @@ html[data-theme="dark"] .publication-stat dt { color: white; background: var(--b
 #research .pubcard {
   counter-increment: publication;
   display: grid;
-  grid-template-columns: 28px 112px minmax(0, 1fr);
+  grid-template-columns: 28px 96px minmax(0, 1fr);
   align-items: start;
-  gap: 18px;
-  padding: 20px 8px 20px 0;
+  gap: 14px;
+  padding: 16px 8px 16px 0;
   overflow: visible;
   background: transparent;
   border: 0;
   border-bottom: 1px solid var(--rule);
   scroll-snap-align: none;
-  transition: background-color .2s ease, padding .2s ease;
+  transition: background-color .2s ease;
 }
 
 #research .pubcard::before {
@@ -643,7 +643,6 @@ html[data-theme="dark"] .publication-stat dt { color: white; background: var(--b
 }
 
 #research .pubcard:hover {
-  padding-left: 8px;
   background: color-mix(in srgb, var(--blue) 5%, transparent);
   box-shadow: none;
   transform: none;
@@ -651,7 +650,7 @@ html[data-theme="dark"] .publication-stat dt { color: white; background: var(--b
 
 #research .pubcard__frame { min-width: 0; }
 #research .pubcard__figure {
-  width: 112px;
+  width: 96px;
   aspect-ratio: 4 / 3;
   background: white;
   border: 1px solid var(--rule-dark);
@@ -677,6 +676,10 @@ html[data-theme="dark"] .publication-stat dt { color: white; background: var(--b
   font-size: 15px;
   font-weight: 600;
   line-height: 1.42;
+  text-align: justify;
+  text-wrap: wrap;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 #research .pubcard__journal {
@@ -685,9 +688,10 @@ html[data-theme="dark"] .publication-stat dt { color: white; background: var(--b
   margin: 0 0 5px;
   color: var(--muted);
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 1.45;
+  text-align: justify;
   text-transform: none;
 }
 
@@ -696,7 +700,7 @@ html[data-theme="dark"] .publication-stat dt { color: white; background: var(--b
   align-self: flex-start;
   margin: 0;
   color: var(--blue);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: .04em;
 }
@@ -755,8 +759,6 @@ html[data-theme="dark"] .publication-stat dt { color: white; background: var(--b
   .publication-more { align-items: flex-end; flex-direction: column; }
   #research .pubcard { grid-template-columns: 22px 76px minmax(0, 1fr); gap: 10px; padding-block: 17px; }
   #research .pubcard__figure { width: 76px; }
-  #research .pubcard__body h3 { font-size: 13px; }
-  #research .pubcard__journal, #research .pubcard__doi { font-size: 10px; }
 }
 
 /* Project navigation and detail pages */
@@ -831,7 +833,7 @@ h1, h2, h3, h4 { text-wrap: pretty; }
   font-family: var(--sans); font-size: var(--type-subtitle); font-weight: 700; line-height: 1.35;
 }
 .explog__body h3, .explog__body h4, .projcard__content h3,
-.media-card__content h3, .reclist__item h3, #research .pubcard__body h3,
+.media-card__content h3, .reclist__item h3,
 .skillgroup h3, .writelist__title {
   font-family: var(--sans); font-size: 18px; font-weight: 700; line-height: 1.4; letter-spacing: normal;
 }
@@ -841,12 +843,12 @@ h1, h2, h3, h4 { text-wrap: pretty; }
 .hero__affiliation, .edurow__body p, .publication-stat dd { font-size: 16px; line-height: 1.6; }
 .education-item__degree, .education-item__top time { font-style: normal; }
 .edurow__time, .explog__time, .education-item__top time, .explog__org,
-.media-card__meta, .reclist__year, #research .pubcard__journal,
+.media-card__meta, .reclist__year,
 .publication-toolbar label, .publication-results, .publication-more,
 .sitefoot__links span, .sitefoot__base { font-size: var(--type-label); line-height: 1.5; }
 .eyebrow, .sitefoot__eyebrow { font-size: var(--type-label); font-weight: 700; letter-spacing: .08em; }
 .button, .projcard__github, .projcard__hint, .media-card__link,
-#research .pubcard__doi, .writelist__link, .publication-results button,
+.writelist__link, .publication-results button,
 .publication-empty button, .project-detail__figure figcaption { font-size: var(--type-small); line-height: 1.5; }
 .projcard__github, .media-card__link, #research .pubcard__doi, .writelist__link { text-transform: none; letter-spacing: normal; }
 .publication-toolbar input, .publication-toolbar select { font-size: 16px; }
