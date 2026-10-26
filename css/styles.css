@@ -85,7 +85,7 @@ html[data-theme="dark"] .theme-toggle::after { transform: translateX(18px); }
 
 main, .sitefoot { width: min(calc(100% - 48px), var(--maxw)); margin: 0 auto; }
 .hero { padding: clamp(70px, 3vw, 128px) 0 56px; }
-.hero__intro { display: grid; grid-template-columns: minmax(0, 1fr) 295px; align-items: center; gap: clamp(50px, 9vw, 120px); }
+.hero__intro { display: grid; grid-template-columns: minmax(0, 1fr) 310px; align-items: center; gap: clamp(50px, 9vw, 120px); }
 .hero__copy { max-width: 730px; }
 .eyebrow { margin-bottom: 24px; color: var(--gold); font-family: var(--meta); font-size: 12px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
 .hero__name { margin-bottom: 24px; font-size: clamp(36px, 5vw, 52px); font-weight: 400; letter-spacing: -.045em; line-height: 1.1; }
@@ -105,7 +105,7 @@ main, .sitefoot { width: min(calc(100% - 48px), var(--maxw)); margin: 0 auto; }
 }
 
 .hero__portrait {
-  width: 80%;
+  width: 100%;
   aspect-ratio: 4 / 5;
   border-radius: 0;
   object-fit: cover;
